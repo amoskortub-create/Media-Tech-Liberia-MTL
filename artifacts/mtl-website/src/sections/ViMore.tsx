@@ -8,182 +8,149 @@ const VIMORE_URL = "https://www.vimore.cfd";
 
 export function ViMore() {
   return (
-    <section className="py-32 bg-background relative z-10 overflow-hidden" id="products">
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-purple-600/8 rounded-full blur-[180px] -z-10" />
-      <div className="absolute right-0 top-1/4 w-[40vw] h-[40vw] bg-primary/5 rounded-full blur-[150px] -z-10" />
+    <section className="py-24 bg-slate-50 border-y border-slate-100" id="products">
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
 
-      <div className="max-w-6xl mx-auto px-4 md:px-12 lg:px-24">
-        <div className="text-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+        {/* Header */}
+        <div className="mb-14">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-500/10 border border-purple-500/20 rounded-full text-purple-400 text-xs font-bold tracking-wider uppercase mb-6"
+            className="text-[11px] font-bold uppercase tracking-widest text-purple-600 mb-3"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-purple-400 animate-pulse" />
             Deployed Product
-          </motion.div>
+          </motion.p>
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="text-3xl md:text-4xl font-black text-slate-900 mb-3 leading-tight"
+          >
+            ViMore Ecosystem
+            <span className="text-purple-600"> — The Sovereign Economy Engine</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 leading-tight"
-          >
-            ViMore Ecosystem <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-purple-600">
-              — The Sovereign Economy Engine
-            </span>
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground max-w-xl mx-auto"
+            className="text-[15px] text-slate-500 max-w-xl"
           >
             West Africa's first fully self-hosted social monetization platform — built in Liberia, owned by Liberians.
           </motion.p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-16">
-          {/* Left: Info Card */}
+        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14">
+
+          {/* Left: Info card */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 w-full bg-card border border-white/10 rounded-[32px] p-8 shadow-2xl relative overflow-hidden"
+            className="flex-1 w-full bg-white border border-slate-200 rounded-xl p-7 shadow-sm"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-600/5 to-primary/5 pointer-events-none" />
-
-            <div className="mb-8 relative">
-              <h4 className="text-xs text-muted-foreground uppercase tracking-wider mb-4 font-semibold">
-                Marketplace Commission
-              </h4>
-              <div className="flex flex-wrap gap-3">
-                <span className="px-4 py-2 bg-primary/10 border border-primary/30 text-primary rounded-full text-sm font-bold">
-                  10% Verified Nodes
-                </span>
-                <span className="px-4 py-2 bg-white/5 border border-white/10 text-foreground/70 rounded-full text-sm font-medium">
-                  20% Standard Nodes
-                </span>
+            {/* Commission */}
+            <div className="mb-7">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-3">Marketplace Commission</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-3 py-1.5 bg-purple-50 border border-purple-200 text-purple-700 rounded-lg text-[12px] font-bold">10% Verified Nodes</span>
+                <span className="px-3 py-1.5 bg-slate-50 border border-slate-200 text-slate-600 rounded-lg text-[12px] font-semibold">20% Standard Nodes</span>
               </div>
             </div>
 
-            <div className="space-y-3 mb-10 relative">
-              <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-purple-500/20 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400 flex-shrink-0">
-                  <Play size={18} fill="currentColor" />
+            {/* Features */}
+            <div className="space-y-2.5 mb-7">
+              {[
+                { icon: Play, label: "Social Feed + Reels + Music Hub", bg: "bg-purple-50 text-purple-600" },
+                { icon: DollarSign, label: "Secure Automated Revenue Engine", bg: "bg-green-50 text-green-600" },
+                { icon: MessageCircle, label: "Community Messaging & Localization", bg: "bg-blue-50 text-blue-600" },
+              ].map((feat, i) => (
+                <div key={i} className="flex items-center gap-3 p-3.5 bg-slate-50 border border-slate-100 rounded-lg">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${feat.bg}`}>
+                    <feat.icon size={15} />
+                  </div>
+                  <span className="text-[13px] font-semibold text-slate-700">{feat.label}</span>
                 </div>
-                <span className="font-semibold text-sm">Social Feed + Reels + Music Hub</span>
-              </div>
-              <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-green-500/20 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center text-green-400 flex-shrink-0">
-                  <DollarSign size={18} />
-                </div>
-                <span className="font-semibold text-sm">Secure Automated Revenue Engine</span>
-              </div>
-              <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 hover:border-blue-500/20 transition-colors">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 flex-shrink-0">
-                  <MessageCircle size={18} />
-                </div>
-                <span className="font-semibold text-sm">Community Messaging & Localization</span>
-              </div>
+              ))}
             </div>
 
-            <div className="border-t border-white/8 pt-8 mb-10 relative">
-              <h4 className="text-xs text-muted-foreground uppercase tracking-wider mb-5 font-semibold">
-                Monetization Engine
-              </h4>
-              <div className="grid gap-3">
+            {/* Monetization */}
+            <div className="border-t border-slate-100 pt-6 mb-7">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-4">Monetization Engine</p>
+              <div className="grid gap-2">
                 {[
                   "Monthly Verification Badges",
                   "Ad Campaigns Engine for Local MSMEs",
                   "On-Demand Post Boosting via Mobile Money",
                 ].map((item) => (
-                  <div key={item} className="text-sm text-foreground/80 font-medium flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                  <div key={item} className="flex items-center gap-2.5 text-[13px] text-slate-600 font-medium">
+                    <div className="w-1.5 h-1.5 rounded-full bg-purple-500 flex-shrink-0" />
                     {item}
                   </div>
                 ))}
               </div>
             </div>
 
+            {/* CTA */}
             <motion.a
               href={VIMORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-purple-400 text-white font-bold py-5 rounded-2xl shadow-[0_0_30px_rgba(168,85,247,0.35)] hover:shadow-[0_0_50px_rgba(168,85,247,0.55)] transition-all cursor-pointer no-underline"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 to-violet-500 text-white font-semibold py-4 rounded-xl shadow-md shadow-purple-200 hover:shadow-purple-300 hover:opacity-95 transition-all text-[14px]"
               data-testid="link-open-vimore"
             >
               Open ViMore App
-              <ExternalLink size={18} />
+              <ExternalLink size={15} />
             </motion.a>
           </motion.div>
 
-          {/* Right: Real Screenshot Stack */}
+          {/* Right: Phone stack */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1 w-full flex justify-center items-start"
+            className="flex-1 w-full flex justify-center"
           >
-            <div className="relative w-full max-w-[320px] mx-auto">
-              {/* Background phone (screenshot 3 - Music) */}
+            <div className="relative w-full max-w-[300px] mx-auto" style={{ minHeight: 480 }}>
+              {/* Back phone */}
               <motion.div
-                initial={{ opacity: 0, rotate: 6, y: 20 }}
-                whileInView={{ opacity: 1, rotate: 6, y: 0 }}
+                initial={{ opacity: 0, rotate: 7, y: 20 }}
+                whileInView={{ opacity: 1, rotate: 7, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="absolute -right-4 top-6 w-[220px] rounded-[32px] overflow-hidden border-[4px] border-slate-700/60 shadow-2xl"
+                className="absolute -right-4 top-6 w-[190px] rounded-[28px] overflow-hidden border-4 border-white shadow-xl"
                 style={{ zIndex: 1 }}
               >
-                <img
-                  src={screenshot3}
-                  alt="ViMore Music Hub"
-                  className="w-full object-cover object-top"
-                  style={{ maxHeight: 420 }}
-                  data-testid="img-vimore-music"
-                />
+                <img src={screenshot3} alt="ViMore Music Hub" className="w-full object-cover object-top" style={{ maxHeight: 360 }} data-testid="img-vimore-music" />
               </motion.div>
 
-              {/* Middle phone (screenshot 2 - Menu) */}
+              {/* Mid phone */}
               <motion.div
-                initial={{ opacity: 0, rotate: -4, y: 30 }}
-                whileInView={{ opacity: 1, rotate: -4, y: 0 }}
+                initial={{ opacity: 0, rotate: -5, y: 28 }}
+                whileInView={{ opacity: 1, rotate: -5, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.15 }}
-                className="absolute -left-4 top-10 w-[220px] rounded-[32px] overflow-hidden border-[4px] border-slate-700/60 shadow-2xl"
+                className="absolute -left-4 top-10 w-[190px] rounded-[28px] overflow-hidden border-4 border-white shadow-xl"
                 style={{ zIndex: 2 }}
               >
-                <img
-                  src={screenshot2}
-                  alt="ViMore Menu"
-                  className="w-full object-cover object-top"
-                  style={{ maxHeight: 420 }}
-                  data-testid="img-vimore-menu"
-                />
+                <img src={screenshot2} alt="ViMore Menu" className="w-full object-cover object-top" style={{ maxHeight: 360 }} data-testid="img-vimore-menu" />
               </motion.div>
 
-              {/* Front phone (screenshot 1 - Home feed) */}
+              {/* Front phone */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 36 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0 }}
-                className="relative mx-auto w-[260px] rounded-[36px] overflow-hidden border-[5px] border-slate-600 shadow-[0_30px_80px_rgba(0,0,0,0.6),0_0_40px_rgba(168,85,247,0.2)]"
+                className="relative mx-auto w-[240px] rounded-[34px] overflow-hidden border-[5px] border-white shadow-2xl"
                 style={{ zIndex: 3, marginTop: 40, marginBottom: 40 }}
               >
-                <img
-                  src={screenshot1}
-                  alt="ViMore Home Feed"
-                  className="w-full object-cover object-top"
-                  data-testid="img-vimore-feed"
-                />
-                {/* Glow ring under front phone */}
-                <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-40 h-6 bg-purple-500/30 blur-2xl rounded-full" />
+                <img src={screenshot1} alt="ViMore Home Feed" className="w-full object-cover object-top" data-testid="img-vimore-feed" />
+                <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-32 h-5 bg-purple-400/30 blur-xl rounded-full" />
               </motion.div>
             </div>
           </motion.div>

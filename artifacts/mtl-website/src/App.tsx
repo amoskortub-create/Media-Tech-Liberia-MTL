@@ -19,7 +19,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-          <div className="min-h-screen bg-background text-foreground font-sans dark selection:bg-primary/30">
+          <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
             <Navigation />
             <main>
               <Hero />
