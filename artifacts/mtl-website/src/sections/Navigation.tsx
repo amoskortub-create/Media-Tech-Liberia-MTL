@@ -29,7 +29,7 @@ export function Navigation() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/92 backdrop-blur-md border-b border-slate-200/80">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 h-14 flex items-center justify-between gap-4">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 h-14 flex items-center justify-between">
           {/* Logo */}
           <button
             onClick={() => scrollTo("hero")}
