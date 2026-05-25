@@ -1,5 +1,32 @@
 import { motion } from "framer-motion";
-import { CreditCard, LayoutDashboard, ShoppingCart, GraduationCap, ArrowRight } from "lucide-react";
+import { CreditCard, LayoutDashboard, ShoppingCart, GraduationCap, ArrowRight, Globe, HardDrive, Wrench, BarChart3 } from "lucide-react";
+
+const managed = [
+  {
+    icon: Globe,
+    emoji: "🌐",
+    title: "Sovereign Cloud Hosting",
+    body: "Your product runs seamlessly on our optimized, low-latency infrastructure, completely bypassing expensive foreign cloud subscription traps and hidden platform fees.",
+  },
+  {
+    icon: HardDrive,
+    emoji: "💾",
+    title: "Automated Backups & System Redundancy",
+    body: "We orchestrate daily automated database snapshots and state-backups, ensuring your critical corporate data is 100% secure and instantly restorable.",
+  },
+  {
+    icon: Wrench,
+    emoji: "🔧",
+    title: "Continuous Maintenance & Security Patching",
+    body: "Our team handles real-time server monitoring, backend optimization, security protocol updates, and monthly software maintenance without your operations skipping a single beat.",
+  },
+  {
+    icon: BarChart3,
+    emoji: "📊",
+    title: "Scalability On-Demand",
+    body: "As your user base or business operations grow from Monrovia across the counties, we dynamically scale your backend nodes to handle heavy data traffic smoothly.",
+  },
+];
 
 const services = [
   {
@@ -121,6 +148,110 @@ export function Services() {
             </motion.div>
           ))}
         </div>
+
+        {/* ── Managed Infrastructure premium card ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="relative overflow-hidden rounded-2xl mb-8"
+          style={{
+            background: "linear-gradient(135deg, #0f172a 0%, #0c1a2e 100%)",
+            boxShadow: "0 0 0 1px rgba(6,182,212,0.35), 0 0 40px 0 rgba(6,182,212,0.08)",
+          }}
+        >
+          {/* Cyan glow blob */}
+          <div className="absolute -top-20 -right-20 w-64 h-64 rounded-full bg-cyan-500/10 blur-[80px] pointer-events-none" />
+          <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-cyan-500/8 blur-[60px] pointer-events-none" />
+          {/* Grid texture */}
+          <div
+            className="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style={{
+              backgroundImage: "linear-gradient(to right, #22d3ee 1px, transparent 1px), linear-gradient(to bottom, #22d3ee 1px, transparent 1px)",
+              backgroundSize: "28px 28px",
+            }}
+          />
+
+          <div className="relative z-10 p-6 md:p-9">
+            {/* Header */}
+            <div className="mb-7">
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <span className="text-[10px] font-black uppercase tracking-widest text-cyan-400">MTL Advantage</span>
+                <span className="px-2 py-0.5 bg-cyan-500/15 border border-cyan-500/30 rounded-md text-[10px] font-bold text-cyan-300">
+                  Premium Managed Service
+                </span>
+              </div>
+              <h3 className="text-xl md:text-2xl font-black text-white mb-3 leading-tight">
+                🚀 Full Lifecycle Product Management &{" "}
+                <span className="text-cyan-400">Sovereign Hosting</span>
+              </h3>
+              <p className="text-[13px] text-slate-400 leading-relaxed max-w-2xl">
+                We don't just hand you a folder of code and walk away. We host, scale, and fully maintain your digital application on our independent, self-hosted Appwrite production clusters.
+              </p>
+            </div>
+
+            {/* Deliverables grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+              {managed.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 + i * 0.08 }}
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  className="flex flex-col gap-3 bg-white/[0.04] border border-cyan-500/15 rounded-xl p-4 hover:border-cyan-500/35 hover:bg-white/[0.07] transition-all duration-300"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-cyan-500/15 border border-cyan-500/25 flex items-center justify-center flex-shrink-0">
+                      <item.icon size={15} className="text-cyan-400" />
+                    </div>
+                    <h4 className="text-[13px] font-bold text-white leading-snug">{item.title}</h4>
+                  </div>
+                  <p className="text-[12px] text-slate-400 leading-relaxed">{item.body}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* CTA block */}
+            <div className="border-t border-cyan-500/15 pt-6 flex flex-col md:flex-row gap-5 items-start md:items-center justify-between">
+              <div className="flex-1 min-w-0">
+                <p className="text-[12px] font-black uppercase tracking-widest text-cyan-400 mb-2">
+                  Let Us Manage the Code. You Manage the Business.
+                </p>
+                <p className="text-[13px] text-slate-400 leading-relaxed max-w-xl">
+                  Skip the stress of server management. Contact our engineering team today to schedule a{" "}
+                  <span className="text-white font-semibold">15-minute technical discovery scope</span>. We will provide a completely customized development blueprint and a transparent, value-driven management quote tailored precisely to your entity's data needs{" "}
+                  <span className="text-cyan-400 font-semibold">within 48 hours</span>.
+                </p>
+              </div>
+              <div className="flex-shrink-0 flex flex-col sm:flex-row gap-2.5">
+                <motion.a
+                  href="https://wa.me/231778451835?text=Hi%20MTL%2C%20I%27d%20like%20to%20schedule%20a%20discovery%20scope%20for%20managed%20infrastructure."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center justify-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-black text-[13px] px-5 py-3 rounded-xl shadow-lg shadow-cyan-500/25 transition-colors whitespace-nowrap"
+                  data-testid="button-managed-whatsapp"
+                >
+                  Schedule Discovery
+                  <ArrowRight size={14} />
+                </motion.a>
+                <motion.button
+                  onClick={() => scrollTo("contact")}
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border border-cyan-500/40 hover:border-cyan-400 text-cyan-300 hover:text-cyan-200 font-semibold text-[13px] px-5 py-3 rounded-xl transition-all whitespace-nowrap"
+                  data-testid="button-managed-email"
+                >
+                  Email Us
+                </motion.button>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Bottom sovereign CTA banner */}
         <motion.div
