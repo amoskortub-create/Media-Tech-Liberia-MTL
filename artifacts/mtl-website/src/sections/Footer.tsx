@@ -21,9 +21,14 @@ const values = [
   },
 ];
 
+const legalLinks = [
+  { label: "Privacy Policy", href: "#" },
+  { label: "Terms of Infrastructure Service", href: "#" },
+];
+
 export function Footer() {
   return (
-    <footer className="pt-20 pb-8 bg-slate-50 border-t border-slate-200" id="contact">
+    <footer className="pt-20 pb-0 bg-slate-50 border-t border-slate-200" id="contact">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
 
         {/* CTA Header */}
@@ -115,17 +120,44 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Footer bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-slate-200 gap-3">
+        {/* Footer brand bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-slate-200 gap-3 pb-6">
           <div className="flex items-center gap-2.5">
             <div className="w-7 h-7 rounded-full overflow-hidden border border-primary/20">
               <img src={mtlLogo} alt="MTL" className="w-full h-full object-cover" />
             </div>
             <span className="text-[12px] font-bold tracking-wide text-slate-700">MEDIA TECH LIBERIA</span>
           </div>
-          <p className="text-[12px] text-slate-400">© 2025 Media Tech Liberia. All rights reserved. · Built in Liberia 🇱🇷</p>
+          <p className="text-[12px] text-slate-400">© 2026 Media Tech Liberia. All rights reserved. · Built in Liberia 🇱🇷</p>
         </div>
+      </div>
 
+      {/* Institutional Compliance Bar */}
+      <div className="bg-slate-900 border-t border-slate-800">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 py-5">
+          <p className="text-[11px] text-slate-500 leading-relaxed text-center mb-3">
+            © 2026 Media Tech Liberia. All Rights Reserved. Engineered in Paynesville City, Liberia. All custom applications are deployed on self-hosted, sovereign cloud nodes. Business registration, data policies, and institutional service level agreements (SLAs) are maintained in strict compliance with the Liberia Business Registry (LBR) frameworks.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            {legalLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-[11px] text-slate-500 hover:text-slate-300 transition-opacity duration-200 hover:opacity-100 opacity-70 font-medium"
+              >
+                {link.label}
+              </a>
+            ))}
+            <span className="text-slate-700 hidden sm:inline">|</span>
+            <span className="flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              System Status: Optimal
+            </span>
+          </div>
+        </div>
       </div>
     </footer>
   );

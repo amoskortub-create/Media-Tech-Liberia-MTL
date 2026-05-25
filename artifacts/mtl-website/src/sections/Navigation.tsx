@@ -4,11 +4,12 @@ import { Menu, X } from "lucide-react";
 import mtlLogo from "@assets/1775314197014_transcpr_1779748663765.jpg";
 
 const links = [
-  { name: "Products", href: "products" },
   { name: "Capabilities", href: "capabilities" },
   { name: "Services", href: "services" },
   { name: "ViMore", href: "viMore" },
   { name: "Scholar Net", href: "scholarNet" },
+  { name: "Security", href: "security" },
+  { name: "Process", href: "workflow" },
   { name: "About", href: "about" },
   { name: "Contact", href: "contact" },
 ];
