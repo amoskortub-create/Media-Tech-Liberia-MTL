@@ -19,16 +19,16 @@ const story = [
 
 export function Leadership() {
   return (
-    <section className="py-24 bg-slate-50 border-t border-slate-200" id="about">
+    <section className="py-20 bg-slate-50 border-t border-slate-200" id="about">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
 
         {/* Section label */}
-        <div className="mb-14">
+        <div className="mb-12">
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[11px] font-bold uppercase tracking-widest text-primary mb-3"
+            className="text-[11px] font-bold uppercase tracking-widest text-primary mb-2"
           >
             Executive Leadership
           </motion.p>
@@ -43,29 +43,28 @@ export function Leadership() {
           </motion.h2>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 items-start">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
 
-          {/* Left: profile card */}
+          {/* Left: full portrait card */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="w-full lg:w-72 flex-shrink-0"
+            className="w-full lg:w-64 flex-shrink-0 flex flex-col gap-4"
           >
-            <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
-              {/* Header banner */}
-              <div className="h-20 bg-gradient-to-r from-blue-600 to-primary relative" />
-
-              <div className="px-6 pb-6 -mt-10">
-                <div className="w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-md mb-4">
-                  <img
-                    src={amosPhoto}
-                    alt="Amos B. Kortu — Founder & CEO"
-                    className="w-full h-full object-cover object-top"
-                    data-testid="img-founder-amos"
-                  />
-                </div>
-                <h3 className="text-[16px] font-black text-slate-900 leading-tight">Amos B. Kortu</h3>
+            {/* Portrait photo — tall rectangle, face fully visible */}
+            <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+              <div className="w-full h-72 sm:h-80 overflow-hidden">
+                <img
+                  src={amosPhoto}
+                  alt="Amos B. Kortu — Founder & CEO"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: "center 15%" }}
+                  data-testid="img-founder-amos"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-[16px] font-black text-slate-900 leading-snug">Amos B. Kortu</h3>
                 <p className="text-[12px] text-primary font-semibold mt-0.5 mb-4">Founder & CEO · Media Tech Liberia</p>
                 <div className="flex flex-wrap gap-1.5">
                   {tags.map((tag) => (
@@ -83,12 +82,12 @@ export function Leadership() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.15 }}
-              className="mt-4 bg-primary rounded-xl p-5 text-white"
+              className="bg-primary rounded-2xl p-5 text-white"
             >
-              <p className="text-[13px] font-semibold leading-relaxed italic mb-2">
+              <p className="text-[13px] font-semibold leading-relaxed italic mb-3">
                 "Africa's digital future is not something to wait for — it is something to build."
               </p>
-              <p className="text-[11px] text-white/70 font-medium">— Amos B. Kortu</p>
+              <p className="text-[11px] text-white/70 font-medium">— Amos B. Kortu, Founder & CEO</p>
             </motion.div>
           </motion.div>
 
@@ -97,7 +96,7 @@ export function Leadership() {
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex-1"
+            className="flex-1 min-w-0"
           >
             <div className="space-y-4 mb-10">
               {story.map((para, i) => (
@@ -106,7 +105,7 @@ export function Leadership() {
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.08 }}
+                  transition={{ delay: i * 0.07 }}
                   className="text-[14px] text-slate-600 leading-relaxed"
                 >
                   {para}
@@ -126,16 +125,16 @@ export function Leadership() {
             {/* Values */}
             <div>
               <p className="text-[11px] font-bold uppercase tracking-widest text-slate-400 mb-4">Our Values</p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className="grid grid-cols-2 gap-3">
                 {values.map((val, i) => (
                   <motion.div
                     key={val.label}
-                    initial={{ opacity: 0, y: 16 }}
+                    initial={{ opacity: 0, y: 14 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ delay: 0.4 + i * 0.07 }}
-                    whileHover={{ y: -3 }}
-                    className="bg-white border border-slate-200 rounded-xl p-4 text-center hover:border-primary/30 hover:shadow-md transition-all duration-200"
+                    transition={{ delay: 0.35 + i * 0.07 }}
+                    whileHover={{ y: -2 }}
+                    className="bg-white border border-slate-200 rounded-xl p-4 hover:border-primary/30 hover:shadow-md transition-all duration-200"
                   >
                     <div className="text-2xl mb-2">{val.emoji}</div>
                     <p className="text-[12px] font-bold text-slate-800 mb-1">{val.label}</p>

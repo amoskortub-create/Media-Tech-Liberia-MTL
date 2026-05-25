@@ -7,6 +7,7 @@ import { Navigation } from "./sections/Navigation";
 import { Hero } from "./sections/Hero";
 import { Metrics } from "./sections/Metrics";
 import { Capabilities } from "./sections/Capabilities";
+import { Services } from "./sections/Services";
 import { ViMore } from "./sections/ViMore";
 import { ScholarNet } from "./sections/ScholarNet";
 import { Leadership } from "./sections/Leadership";
@@ -25,6 +26,7 @@ function App() {
               <Hero />
               <Metrics />
               <Capabilities />
+              <Services />
               <ViMore />
               <ScholarNet />
               <Leadership />
