@@ -1,6 +1,6 @@
 {
   "buildCommand": "pnpm --filter @workspace/mtl-website run build",
-  "outputDirectory": "artifacts/mtl-website/dist/public",
+  "outputDirectory": "artifacts/mtl-website/dist",
   "installCommand": "pnpm install --frozen-lockfile",
   "framework": null,
   "rewrites": [
