@@ -55,7 +55,11 @@ export default defineConfig(async ({ command }) => {
     },
     root: path.resolve(import.meta.dirname),
     build: {
-      outDir: path.resolve(import.meta.dirname, "dist"),
+      // On Vercel (VERCEL=1), output to the repo root so vercel.json "outputDirectory":"dist" matches.
+      // Locally, output inside the artifact folder for Replit workflows.
+      outDir: process.env.VERCEL
+        ? path.resolve(import.meta.dirname, "..", "..", "dist")
+        : path.resolve(import.meta.dirname, "dist"),
       emptyOutDir: true,
     },
     server: {
