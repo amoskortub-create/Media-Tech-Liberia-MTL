@@ -14,6 +14,7 @@ import { Security } from "./sections/Security";
 import { DeliveryWorkflow } from "./sections/DeliveryWorkflow";
 import { Leadership } from "./sections/Leadership";
 import { Footer } from "./sections/Footer";
+import { WhatsAppButton } from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ function App() {
               <Leadership />
             </main>
             <Footer />
+            <WhatsAppButton />
           </div>
         </WouterRouter>
         <Toaster />
