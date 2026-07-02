@@ -1,162 +1,191 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Phone, Mail, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Zap, Globe, Shield, Code2 } from "lucide-react";
 import mtlLogo from "@assets/1775314197014_transcpr_1779748663765.jpg";
 
-const values = [
+const contactItems = [
   {
-    title: "Built in Liberia, for Liberia",
-    desc: "We understand local infrastructure, local payments, local languages, and local users. We don't guess — we know.",
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "+231 778 451 835",
+    href: "https://wa.me/231778451835?text=Hi%20Media%20Tech%20Liberia%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services.",
+    color: "#25d366",
   },
   {
-    title: "Optimized for Low Bandwidth",
-    desc: "Every product we build is engineered to run fast on mobile data. No bloat. No lag. No excuses.",
+    icon: Phone,
+    label: "Phone",
+    value: "+231 778 451 835",
+    href: "tel:+231778451835",
+    color: "#3b82f6",
   },
   {
-    title: "You Own Your Data",
-    desc: "We build on self-hosted Appwrite infrastructure. Your business data stays in your control — never on a foreign cloud.",
+    icon: Mail,
+    label: "Email",
+    value: "contact@mediatechliberia.com",
+    href: "mailto:contact@mediatechliberia.com",
+    color: "#06b6d4",
   },
   {
-    title: "Ongoing Support & Transparent Pricing",
-    desc: "No hidden fees, upfront pricing designed for Liberian businesses. Continuous engineering access after launch.",
+    icon: MapPin,
+    label: "Location",
+    value: "Paynesville City, Liberia 🇱🇷",
+    href: "#",
+    color: "#f59e0b",
   },
+];
+
+const navLinks = [
+  { label: "Capabilities", href: "capabilities" },
+  { label: "Services", href: "services" },
+  { label: "ViMore", href: "viMore" },
+  { label: "Scholar Net", href: "scholarNet" },
+  { label: "Security", href: "security" },
+  { label: "Process", href: "workflow" },
+  { label: "Team", href: "about" },
+];
+
+const pillars = [
+  { icon: Code2, label: "Sovereign Code" },
+  { icon: Shield, label: "Data Security" },
+  { icon: Globe, label: "West Africa First" },
+  { icon: Zap, label: "High Performance" },
 ];
 
 const legalLinks = [
   { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Infrastructure Service", href: "#" },
+  { label: "Terms of Service", href: "#" },
+  { label: "Data Policy", href: "#" },
+  { label: "SLA", href: "#" },
 ];
+
+function scrollTo(id: string) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 export function Footer() {
   return (
-    <footer className="pt-20 pb-0 bg-slate-50 border-t border-slate-200" id="contact">
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
+    <footer id="contact" style={{ background: "hsl(222 47% 3%)", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-14">
 
-        {/* CTA Header */}
-        <div className="text-center mb-12">
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-[11px] font-bold uppercase tracking-widest text-primary mb-3"
-          >
-            Get In Touch
-          </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.05 }}
-            className="text-3xl md:text-4xl font-black text-slate-900 mb-3"
-          >
-            Ready to start your project?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-[15px] text-slate-500 max-w-xl mx-auto"
-          >
-            Reach us instantly via WhatsApp, phone call, or email. We respond to every inquiry and provide a free consultation for every project.
-          </motion.p>
-        </div>
-
-        {/* Contact buttons */}
-        <div className="flex flex-col md:flex-row justify-center gap-3 mb-16">
-          <motion.a
-            href="https://wa.me/231778451835"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center justify-center gap-2.5 bg-[#25D366] text-white px-6 py-3.5 rounded-xl font-semibold text-[14px] shadow-md shadow-green-200 hover:bg-[#22c55e] transition-colors"
-            data-testid="link-whatsapp"
-          >
-            <MessageSquare size={17} />
-            <span>WhatsApp — +231 778 451 835</span>
-            <span className="hidden sm:inline text-white/70 text-[12px] font-normal">(Fastest)</span>
-          </motion.a>
-
-          <motion.a
-            href="tel:+231778451835"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center justify-center gap-2.5 bg-white border border-slate-200 text-slate-700 px-6 py-3.5 rounded-xl font-semibold text-[14px] hover:bg-slate-50 hover:border-slate-300 transition-colors shadow-sm"
-            data-testid="link-phone"
-          >
-            <Phone size={17} />
-            Call — +231 778 451 835
-          </motion.a>
-
-          <motion.a
-            href="mailto:mediatechliberia@gmail.com"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="flex items-center justify-center gap-2.5 bg-white border border-slate-200 text-slate-700 px-6 py-3.5 rounded-xl font-semibold text-[14px] hover:bg-slate-50 hover:border-slate-300 transition-colors shadow-sm"
-            data-testid="link-email"
-          >
-            <Mail size={17} />
-            mediatechliberia@gmail.com
-          </motion.a>
-        </div>
-
-        {/* Value propositions */}
-        <div className="max-w-4xl mx-auto grid sm:grid-cols-2 gap-4 mb-16">
-          {values.map((val, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="flex gap-3 bg-white border border-slate-200 p-5 rounded-xl"
-            >
-              <CheckCircle2 className="text-primary shrink-0 mt-0.5" size={17} />
-              <div>
-                <p className="text-[13px] font-bold text-slate-800 mb-0.5">{val.title}</p>
-                <p className="text-[12px] text-slate-500 leading-relaxed">{val.desc}</p>
+          {/* Brand column */}
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0"
+                style={{ border: "1px solid rgba(59,130,246,0.3)", boxShadow: "0 0 12px rgba(59,130,246,0.2)" }}>
+                <img src={mtlLogo} alt="Media Tech Liberia" className="w-full h-full object-cover" />
               </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Footer brand bar */}
-        <div className="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-slate-200 gap-3 pb-6">
-          <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-full overflow-hidden border border-primary/20">
-              <img src={mtlLogo} alt="MTL" className="w-full h-full object-cover" />
+              <div>
+                <p className="text-[13px] font-bold text-white tracking-widest uppercase">Media Tech Liberia</p>
+                <p className="text-[10px] font-semibold tracking-wider uppercase" style={{ color: "#60a5fa" }}>
+                  West Africa's Digital Layer
+                </p>
+              </div>
             </div>
-            <span className="text-[12px] font-bold tracking-wide text-slate-700">MEDIA TECH LIBERIA</span>
-          </div>
-          <p className="text-[12px] text-slate-400">© 2026 Media Tech Liberia. All rights reserved. · Built in Liberia 🇱🇷</p>
-        </div>
-      </div>
 
-      {/* Institutional Compliance Bar */}
-      <div className="bg-slate-900 border-t border-slate-800">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 py-5">
-          <p className="text-[11px] text-slate-500 leading-relaxed text-center mb-3">
-            © 2026 Media Tech Liberia. All Rights Reserved. Engineered in Paynesville City, Liberia. All custom applications are deployed on self-hosted, sovereign cloud nodes. Business registration, data policies, and institutional service level agreements (SLAs) are maintained in strict compliance with the Liberia Business Registry (LBR) frameworks.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-            {legalLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-[11px] text-slate-500 hover:text-slate-300 transition-opacity duration-200 hover:opacity-100 opacity-70 font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
-            <span className="text-slate-700 hidden sm:inline">|</span>
-            <span className="flex items-center gap-1.5 text-[11px] text-slate-500 font-medium">
+            <p className="text-[13px] leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.45)" }}>
+              Engineering Africa's digital future through high-performance, sovereign, data-lite software infrastructure. Built in Liberia. Built for Africa.
+            </p>
+
+            {/* Pillars */}
+            <div className="grid grid-cols-2 gap-2">
+              {pillars.map((p) => (
+                <div key={p.label} className="flex items-center gap-2 px-3 py-2 rounded-lg"
+                  style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}>
+                  <p.icon size={12} className="text-blue-400 flex-shrink-0" />
+                  <span className="text-[11px] font-semibold" style={{ color: "rgba(255,255,255,0.55)" }}>{p.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact column */}
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>
+              Contact
+            </p>
+            <div className="flex flex-col gap-3">
+              {contactItems.map((item) => (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                  whileHover={{ x: 3 }}
+                  className="flex items-center gap-3 group"
+                  data-testid={`link-contact-${item.label.toLowerCase()}`}
+                >
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors"
+                    style={{ background: `${item.color}12`, border: `1px solid ${item.color}25` }}>
+                    <item.icon size={14} style={{ color: item.color }} />
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.3)" }}>{item.label}</div>
+                    <div className="text-[13px] font-medium group-hover:text-white transition-colors"
+                      style={{ color: "rgba(255,255,255,0.65)" }}>{item.value}</div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation column */}
+          <div>
+            <p className="text-[11px] font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>
+              Navigation
+            </p>
+            <div className="grid grid-cols-2 gap-2">
+              {navLinks.map((link) => (
+                <button
+                  key={link.label}
+                  onClick={() => scrollTo(link.href)}
+                  className="text-left text-[13px] font-medium transition-colors hover:text-white py-1"
+                  style={{ color: "rgba(255,255,255,0.45)" }}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Status */}
+            <div className="mt-8 flex items-center gap-2 px-4 py-3 rounded-xl"
+              style={{ background: "rgba(16,185,129,0.05)", border: "1px solid rgba(16,185,129,0.1)" }}>
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              System Status: Optimal
-            </span>
+              <span className="text-[12px] font-semibold" style={{ color: "#34d399" }}>All Systems Operational</span>
+            </div>
           </div>
+        </div>
+
+        {/* Divider */}
+        <div style={{ height: "1px", background: "rgba(255,255,255,0.05)" }} className="mb-8" />
+
+        {/* Bottom bar */}
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[12px]" style={{ color: "rgba(255,255,255,0.3)" }}>
+            © 2026 Media Tech Liberia. All rights reserved. · Built in Liberia 🇱🇷
+          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            {legalLinks.map((link) => (
+              <a key={link.label} href={link.href}
+                className="text-[11px] transition-colors hover:text-white/60"
+                style={{ color: "rgba(255,255,255,0.25)" }}>
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Compliance bar */}
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.04)", background: "rgba(0,0,0,0.3)" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+          <p className="text-[11px] text-center leading-relaxed" style={{ color: "rgba(255,255,255,0.2)" }}>
+            © 2026 Media Tech Liberia. All Rights Reserved. Engineered in Paynesville City, Liberia. All custom applications are deployed on self-hosted, sovereign cloud nodes. Business registration, data policies, and institutional SLAs are maintained in strict compliance with the Liberia Business Registry (LBR) frameworks.
+          </p>
         </div>
       </div>
     </footer>

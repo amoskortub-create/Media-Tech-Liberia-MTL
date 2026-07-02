@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { MapPin, FlaskConical, GitBranch, Rocket } from "lucide-react";
+import { MapPin, FlaskConical, GitBranch, Rocket, ArrowRight } from "lucide-react";
 
 const steps = [
   {
@@ -8,136 +8,117 @@ const steps = [
     title: "Requirement Mapping & Node Engineering",
     body: "We map your exact business logic and architect data-lite parameters built specifically for West Africa's bandwidth constraints.",
     tag: "Discovery Phase",
-    color: "text-blue-400",
-    border: "border-blue-500/40",
-    iconBg: "bg-blue-500/15 text-blue-400",
-    dot: "bg-blue-500",
+    color: "#3b82f6",
   },
   {
     number: "02",
     icon: FlaskConical,
     title: "Sandbox Prototyping on Replit",
-    body: "We compile high-fidelity interactive wireframes inside a collaborative sandbox environment for real-time client feedback.",
+    body: "We compile high-fidelity interactive wireframes inside a collaborative sandbox environment for real-time client feedback and iteration.",
     tag: "Design & Prototype",
-    color: "text-violet-400",
-    border: "border-violet-500/40",
-    iconBg: "bg-violet-500/15 text-violet-400",
-    dot: "bg-violet-500",
+    color: "#8b5cf6",
   },
   {
     number: "03",
     icon: GitBranch,
     title: "Version Control & Code Consolidation",
-    body: "Your system architecture is securely versioned and pushed to isolated GitHub repositories, protecting your intellectual property.",
+    body: "Your system architecture is securely versioned and pushed to isolated GitHub repositories, protecting your intellectual property at every stage.",
     tag: "Build Phase",
-    color: "text-emerald-400",
-    border: "border-emerald-500/40",
-    iconBg: "bg-emerald-500/15 text-emerald-400",
-    dot: "bg-emerald-500",
+    color: "#10b981",
   },
   {
     number: "04",
     icon: Rocket,
-    title: "Production Deployment on Vercel Global Edge",
+    title: "Production Deployment on Global Edge",
     body: "We launch your application onto a global CDN network, ensuring ultra-low latency, 100% uptime, and rapid loading speeds on mobile data connections.",
     tag: "Launch & Scale",
-    color: "text-amber-400",
-    border: "border-amber-500/40",
-    iconBg: "bg-amber-500/15 text-amber-400",
-    dot: "bg-amber-500",
+    color: "#f59e0b",
   },
 ];
 
 export function DeliveryWorkflow() {
   return (
-    <section className="py-20 bg-slate-900 border-t border-slate-800" id="workflow">
-      <div className="max-w-6xl mx-auto px-4 md:px-8">
+    <section className="py-24 relative overflow-hidden" id="workflow"
+      style={{ background: "hsl(222 40% 6%)", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+      <div className="absolute inset-0 grid-bg-sm" />
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="mb-12">
-          <motion.p
+        <div className="mb-14">
+          <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[11px] font-bold uppercase tracking-widest text-blue-400 mb-2"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 border text-[11px] font-bold uppercase tracking-widest"
+            style={{ background: "rgba(59,130,246,0.08)", borderColor: "rgba(59,130,246,0.2)", color: "#60a5fa" }}
           >
+            <GitBranch size={10} />
             MTL Architectural Delivery Pipeline
-          </motion.p>
+          </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.05 }}
-            className="text-3xl md:text-4xl font-black text-white mb-4 leading-tight max-w-2xl"
+            className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight"
           >
-            How We Deliver{" "}
-            <span className="text-blue-400">Production Code</span>
+            How We Deliver
+            <span style={{ background: "linear-gradient(135deg,#3b82f6,#10b981)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}> Production Code</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[14px] text-slate-400 max-w-xl leading-relaxed"
+            className="text-[15px] max-w-xl leading-relaxed"
+            style={{ color: "rgba(255,255,255,0.5)" }}
           >
             Our disciplined pipeline ensures your custom platform scales seamlessly from prototype to global edge deployment.
           </motion.p>
         </div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line — hidden on mobile, shown on md+ */}
-          <div className="hidden md:block absolute left-[26px] top-6 bottom-6 w-px bg-gradient-to-b from-blue-500/40 via-emerald-500/30 to-amber-500/20" />
+        {/* Steps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          {steps.map((step, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -4 }}
+              className="relative rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300"
+              style={{ background: "rgba(255,255,255,0.02)", border: `1px solid ${step.color}18` }}
+            >
+              {/* Top line */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl"
+                style={{ background: `linear-gradient(90deg, ${step.color}, transparent)` }} />
 
-          <div className="flex flex-col gap-5">
-            {steps.map((step, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                whileHover={{ x: 4 }}
-                className={`relative flex flex-col sm:flex-row gap-4 bg-slate-800/50 border ${step.border} rounded-2xl p-5 sm:p-6 hover:bg-slate-800/80 transition-all duration-300`}
-              >
-                {/* Step dot on timeline (md+) */}
-                <div className="hidden md:flex flex-shrink-0 w-[52px] items-start justify-center pt-1">
-                  <div className={`w-3.5 h-3.5 rounded-full ${step.dot} ring-4 ring-slate-900 flex-shrink-0 mt-1`} />
+              <div className="flex items-center justify-between">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={{ background: `${step.color}12`, border: `1px solid ${step.color}25` }}>
+                  <step.icon size={18} style={{ color: step.color }} />
                 </div>
+                <span className="font-black text-[28px]" style={{ color: `${step.color}20` }}>{step.number}</span>
+              </div>
 
-                {/* Icon */}
-                <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center ${step.iconBg}`}>
-                  <step.icon size={18} />
-                </div>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-widest mb-2 block" style={{ color: step.color }}>
+                  {step.tag}
+                </span>
+                <h3 className="text-[14px] font-bold text-white mb-2 leading-snug">{step.title}</h3>
+                <p className="text-[12px] leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>{step.body}</p>
+              </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-center gap-2 mb-2">
-                    <span className={`text-[11px] font-black tracking-widest ${step.color}`}>STEP {step.number}</span>
-                    <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold border ${step.border} ${step.color} bg-transparent`}>
-                      {step.tag}
-                    </span>
-                  </div>
-                  <h3 className="text-[15px] font-bold text-white mb-2 leading-snug">{step.title}</h3>
-                  <p className="text-[13px] text-slate-400 leading-relaxed">{step.body}</p>
+              {/* Arrow connector — visible on lg */}
+              {i < steps.length - 1 && (
+                <div className="hidden lg:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+                  <ArrowRight size={16} style={{ color: "rgba(255,255,255,0.15)" }} />
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              )}
+            </motion.div>
+          ))}
         </div>
-
-        {/* Bottom note */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-10 bg-blue-500/10 border border-blue-500/20 rounded-2xl p-5 text-center"
-        >
-          <p className="text-[13px] text-blue-300 leading-relaxed max-w-xl mx-auto">
-            <span className="font-bold text-blue-200">Every project includes a free discovery session.</span> We scope your requirements, estimate timelines, and provide a transparent fixed-cost proposal — before a single line of code is written.
-          </p>
-        </motion.div>
       </div>
     </section>
   );
