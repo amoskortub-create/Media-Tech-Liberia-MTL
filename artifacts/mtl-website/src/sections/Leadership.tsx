@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Users } from "lucide-react";
 import amosPhoto from "@assets/Face_Clean-up_Studio_In_a_studio_portrait_style_a_man_with_dar_1779748900032.jpg";
 import fredPhoto from "@assets/1782961077924_1782961146710.jpg";
 import ujayPhoto from "@assets/1782961027228_1782961146999.jpg";
@@ -7,10 +6,32 @@ import ebenezerPhoto from "@assets/IMG-20260503-WA0006_1782961192424.jpg";
 import aaronPhoto from "@assets/1780710477236_1782961209934.jpg";
 
 // YouTube Shorts embed IDs
-const VIDEO_1 = "gduDonBfWCo"; // first short
-const VIDEO_2 = "RMxv1N0W3Ko"; // second short
+const VIDEO_1 = "gduDonBfWCo";
+const VIDEO_2 = "RMxv1N0W3Ko";
 
+// Team ordered highest position first (after Amos featured)
 const team = [
+  {
+    name: "Aaron M. Tulay",
+    role: "President",
+    photo: aaronPhoto,
+    color: "#06b6d4",
+    bio: "Leads organizational governance and institutional relationships, ensuring Media Tech Liberia's vision translates into lasting impact for Liberia.",
+  },
+  {
+    name: "Pastor Semeiator T Cheason",
+    role: "Vice President",
+    photo: null,
+    color: "#f59e0b",
+    bio: "Drives strategic growth and community engagement, championing Media Tech Liberia's mission across Liberian communities and partnerships.",
+  },
+  {
+    name: "Ebenezer Johnson",
+    role: "Director of Media Tech Liberia",
+    photo: ebenezerPhoto,
+    color: "#fbbf24",
+    bio: "Oversees operations and strategic partnerships, driving the organization's mission to empower Liberian talent across the digital ecosystem.",
+  },
   {
     name: "Fred J. Johnson",
     role: "Editors & Media Director",
@@ -25,20 +46,6 @@ const team = [
     color: "#a78bfa",
     bio: "Core engineer behind Media Tech Liberia's data-lite architectures — bringing technical precision and innovative solutions to every system built.",
   },
-  {
-    name: "Ebenezer Johnson",
-    role: "Director of Media Tech Liberia",
-    photo: ebenezerPhoto,
-    color: "#fbbf24",
-    bio: "Oversees operations and strategic partnerships, driving the organization's mission to empower Liberian talent across the digital ecosystem.",
-  },
-  {
-    name: "Aaron M. Tulay",
-    role: "President",
-    photo: aaronPhoto,
-    color: "#06b6d4",
-    bio: "Leads organizational governance and institutional relationships, ensuring Media Tech Liberia's vision translates into lasting impact for Liberia.",
-  },
 ];
 
 const values = [
@@ -47,6 +54,29 @@ const values = [
   { label: "Innovation", desc: "Always pushing the boundaries of what's possible." },
   { label: "Empathy", desc: "Led by genuine care for our community." },
 ];
+
+function InitialsAvatar({ name, color }: { name: string; color: string }) {
+  const initials = name
+    .split(" ")
+    .filter((_, i) => i === 0 || i === name.split(" ").length - 1)
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+  return (
+    <div
+      className="w-full h-52 flex items-center justify-center flex-shrink-0"
+      style={{ background: `${color}10` }}
+    >
+      <span
+        className="font-black select-none"
+        style={{ fontSize: "3.5rem", color, opacity: 0.7, letterSpacing: "-0.03em" }}
+      >
+        {initials}
+      </span>
+    </div>
+  );
+}
 
 export function Leadership() {
   return (
@@ -236,8 +266,8 @@ export function Leadership() {
           </div>
         </motion.div>
 
-        {/* ── Rest of team ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+        {/* ── Rest of team (highest rank first) ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
           {team.map((m, i) => (
             <motion.div
               key={m.name}
@@ -252,15 +282,19 @@ export function Leadership() {
               {/* Top accent */}
               <div className="h-[1px]" style={{ background: `linear-gradient(90deg, ${m.color}90, transparent)` }} />
 
-              {/* Photo */}
-              <div className="w-full h-52 overflow-hidden flex-shrink-0">
-                <img
-                  src={m.photo}
-                  alt={`${m.name} — ${m.role}`}
-                  className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
-                  data-testid={`img-team-${m.name.split(" ")[0].toLowerCase()}`}
-                />
-              </div>
+              {/* Photo or initials */}
+              {m.photo ? (
+                <div className="w-full h-52 overflow-hidden flex-shrink-0">
+                  <img
+                    src={m.photo}
+                    alt={`${m.name} — ${m.role}`}
+                    className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                    data-testid={`img-team-${m.name.split(" ")[0].toLowerCase()}`}
+                  />
+                </div>
+              ) : (
+                <InitialsAvatar name={m.name} color={m.color} />
+              )}
 
               {/* Info */}
               <div className="p-5 flex flex-col gap-2.5 flex-1">

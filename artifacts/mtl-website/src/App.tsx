@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -15,10 +17,15 @@ import { DeliveryWorkflow } from "./sections/DeliveryWorkflow";
 import { Leadership } from "./sections/Leadership";
 import { Footer } from "./sections/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
+import { PrivacyPolicy } from "./sections/PrivacyPolicy";
+import { TermsOfService } from "./sections/TermsOfService";
 
 const queryClient = new QueryClient();
 
 function App() {
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -36,9 +43,24 @@ function App() {
               <DeliveryWorkflow />
               <Leadership />
             </main>
-            <Footer />
+            <Footer
+              onOpenPrivacy={() => setShowPrivacy(true)}
+              onOpenTerms={() => setShowTerms(true)}
+            />
             <WhatsAppButton />
           </div>
+
+          {/* Legal modals */}
+          <AnimatePresence>
+            {showPrivacy && (
+              <PrivacyPolicy key="privacy" onClose={() => setShowPrivacy(false)} />
+            )}
+          </AnimatePresence>
+          <AnimatePresence>
+            {showTerms && (
+              <TermsOfService key="terms" onClose={() => setShowTerms(false)} />
+            )}
+          </AnimatePresence>
         </WouterRouter>
         <Toaster />
       </TooltipProvider>

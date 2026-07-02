@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, MessageCircle, Code2, Shield, Globe, Zap } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Code2, Shield, Globe, Zap, Facebook } from "lucide-react";
 import mtlLogo from "@assets/1775314197014_transcpr_1779748663765.jpg";
 
 const contactItems = [
@@ -23,6 +23,13 @@ const contactItems = [
     value: "contact@mediatechliberia.com",
     href: "mailto:contact@mediatechliberia.com",
     color: "#06b6d4",
+  },
+  {
+    icon: Facebook,
+    label: "Facebook",
+    value: "Media Tech Liberia",
+    href: "https://www.facebook.com/share/1GC5aq1Uph/",
+    color: "#1877f2",
   },
   {
     icon: MapPin,
@@ -55,7 +62,12 @@ function scrollTo(id: string) {
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-export function Footer() {
+interface FooterProps {
+  onOpenPrivacy: () => void;
+  onOpenTerms: () => void;
+}
+
+export function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps) {
   return (
     <footer
       id="contact"
@@ -187,7 +199,21 @@ export function Footer() {
             © 2026 Media Tech Liberia · All rights reserved · Built in Liberia 🇱🇷
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
-            {["Privacy Policy", "Terms of Service", "Data Policy", "SLA"].map((l) => (
+            <button
+              onClick={onOpenPrivacy}
+              className="text-[11px] transition-colors hover:text-white/50 cursor-pointer"
+              style={{ color: "rgba(255,255,255,0.2)" }}
+            >
+              Privacy Policy
+            </button>
+            <button
+              onClick={onOpenTerms}
+              className="text-[11px] transition-colors hover:text-white/50 cursor-pointer"
+              style={{ color: "rgba(255,255,255,0.2)" }}
+            >
+              Terms of Service
+            </button>
+            {["Data Policy", "SLA"].map((l) => (
               <a key={l} href="#" className="text-[11px] transition-colors hover:text-white/50"
                 style={{ color: "rgba(255,255,255,0.2)" }}>{l}</a>
             ))}
