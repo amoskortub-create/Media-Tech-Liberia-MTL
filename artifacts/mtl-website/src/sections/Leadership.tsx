@@ -5,10 +5,6 @@ import ujayPhoto from "@assets/1782961027228_1782961146999.jpg";
 import ebenezerPhoto from "@assets/IMG-20260503-WA0006_1782961192424.jpg";
 import aaronPhoto from "@assets/1780710477236_1782961209934.jpg";
 
-// YouTube Shorts embed IDs
-const VIDEO_1 = "gduDonBfWCo";
-const VIDEO_2 = "RMxv1N0W3Ko";
-
 // Team ordered highest position first (after Amos featured)
 const team = [
   {
@@ -193,75 +189,6 @@ export function Leadership() {
                   "Africa's digital future is not something to wait for — it is something to build."
                 </p>
               </blockquote>
-
-              {/* ── Two YouTube Shorts side by side ── */}
-              <div>
-                <p
-                  className="text-[10px] font-black tracking-[0.22em] uppercase mb-4"
-                  style={{ color: "rgba(255,255,255,0.28)" }}
-                >
-                  ViMore Demo Videos — by Amos B. Kortu
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {/* Video 1 */}
-                  <div className="flex flex-col gap-2">
-                    <div
-                      className="relative rounded-xl overflow-hidden"
-                      style={{
-                        border: "1px solid rgba(124,58,237,0.22)",
-                        boxShadow: "0 0 24px rgba(124,58,237,0.1)",
-                        aspectRatio: "9/16",
-                        maxHeight: 380,
-                      }}
-                    >
-                      <iframe
-                        src={`https://www.youtube.com/embed/${VIDEO_1}?rel=0&modestbranding=1`}
-                        title="ViMore Demo — How to Create an Account"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                        allowFullScreen
-                        sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        className="absolute inset-0 w-full h-full"
-                        style={{ border: "none" }}
-                        loading="lazy"
-                        data-testid="iframe-video-1"
-                      />
-                    </div>
-                    <p className="text-[11px] font-semibold text-center" style={{ color: "rgba(255,255,255,0.38)" }}>
-                      How to Create a ViMore Account
-                    </p>
-                  </div>
-
-                  {/* Video 2 */}
-                  <div className="flex flex-col gap-2">
-                    <div
-                      className="relative rounded-xl overflow-hidden"
-                      style={{
-                        border: "1px solid rgba(6,182,212,0.22)",
-                        boxShadow: "0 0 24px rgba(6,182,212,0.08)",
-                        aspectRatio: "9/16",
-                        maxHeight: 380,
-                      }}
-                    >
-                      <iframe
-                        src={`https://www.youtube.com/embed/${VIDEO_2}?rel=0&modestbranding=1`}
-                        title="ViMore Demo — App Walkthrough"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                        allowFullScreen
-                        sandbox="allow-scripts allow-same-origin allow-presentation allow-popups"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        className="absolute inset-0 w-full h-full"
-                        style={{ border: "none" }}
-                        loading="lazy"
-                        data-testid="iframe-video-2"
-                      />
-                    </div>
-                    <p className="text-[11px] font-semibold text-center" style={{ color: "rgba(255,255,255,0.38)" }}>
-                      ViMore App Walkthrough
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </motion.div>

@@ -15,6 +15,7 @@ import { ScholarNet } from "./sections/ScholarNet";
 import { Security } from "./sections/Security";
 import { DeliveryWorkflow } from "./sections/DeliveryWorkflow";
 import { Leadership } from "./sections/Leadership";
+import { Videos } from "./sections/Videos";
 import { Footer } from "./sections/Footer";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { PrivacyPolicy } from "./sections/PrivacyPolicy";
@@ -42,6 +43,7 @@ function App() {
               <Security />
               <DeliveryWorkflow />
               <Leadership />
+              <Videos />
             </main>
             <Footer
               onOpenPrivacy={() => setShowPrivacy(true)}
