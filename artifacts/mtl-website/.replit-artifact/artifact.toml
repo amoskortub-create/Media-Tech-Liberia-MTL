@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Media Tech Liberia"
+version = "1.0.0"
+id = "artifacts/mtl-website"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18295
+
+[services.development]
+run = "pnpm --filter @workspace/mtl-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mtl-website", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/mtl-website/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18295"
+BASE_PATH = "/"
