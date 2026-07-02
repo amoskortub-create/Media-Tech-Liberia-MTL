@@ -127,22 +127,22 @@ export function ScholarNet() {
           {/* Right: phone stack */}
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="flex-1 flex justify-center w-full">
-            <div className="relative w-full max-w-[300px] mx-auto" style={{ minHeight: 490 }}>
+            <div className="relative w-full max-w-[210px] mx-auto" style={{ minHeight: 340 }}>
               <motion.div initial={{ opacity: 0, rotate: 7, y: 20 }} whileInView={{ opacity: 1, rotate: 7, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: 0.3 }}
-                className="absolute -right-4 top-6 w-[180px] rounded-[28px] overflow-hidden"
+                className="absolute -right-4 top-4 w-[125px] rounded-[20px] overflow-hidden"
                 style={{ zIndex: 1, border: "2px solid rgba(6,182,212,0.22)", boxShadow: "0 8px 40px rgba(0,0,0,0.7)" }}>
-                <img src={ssTools} alt="Scholar Net Tools" className="w-full object-cover object-top" style={{ maxHeight: 360 }} />
+                <img src={ssTools} alt="Scholar Net Tools" className="w-full object-cover object-top" style={{ maxHeight: 250 }} />
               </motion.div>
               <motion.div initial={{ opacity: 0, rotate: -5, y: 28 }} whileInView={{ opacity: 1, rotate: -5, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: 0.15 }}
-                className="absolute -left-4 top-10 w-[180px] rounded-[28px] overflow-hidden"
+                className="absolute -left-4 top-7 w-[125px] rounded-[20px] overflow-hidden"
                 style={{ zIndex: 2, border: "2px solid rgba(251,191,36,0.2)", boxShadow: "0 8px 40px rgba(0,0,0,0.7)" }}>
-                <img src={ssFeed} alt="Scholar Net Feed" className="w-full object-cover object-top" style={{ maxHeight: 360 }} />
+                <img src={ssFeed} alt="Scholar Net Feed" className="w-full object-cover object-top" style={{ maxHeight: 250 }} />
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="relative mx-auto w-[235px] rounded-[34px] overflow-hidden"
-                style={{ zIndex: 3, marginTop: 50, marginBottom: 40, border: "3px solid rgba(6,182,212,0.45)", boxShadow: "0 0 45px rgba(6,182,212,0.18), 0 24px 60px rgba(0,0,0,0.8)" }}>
+                className="relative mx-auto w-[163px] rounded-[24px] overflow-hidden"
+                style={{ zIndex: 3, marginTop: 35, marginBottom: 28, border: "3px solid rgba(6,182,212,0.45)", boxShadow: "0 0 40px rgba(6,182,212,0.18), 0 24px 60px rgba(0,0,0,0.8)" }}>
                 <img src={ssWelcome} alt="Scholar Net Welcome" className="w-full object-cover object-top" />
               </motion.div>
             </div>
@@ -155,9 +155,9 @@ export function ScholarNet() {
           <div className="flex gap-3 w-max">
             {[ssFeed, ssNotes, ssClasses, ssLaunch].map((src, i) => (
               <motion.div key={i} whileHover={{ y: -5, scale: 1.03 }}
-                className="w-[130px] flex-shrink-0 rounded-[20px] overflow-hidden cursor-pointer transition-all"
+                className="w-[90px] flex-shrink-0 rounded-[16px] overflow-hidden cursor-pointer transition-all"
                 style={{ border: "1px solid rgba(6,182,212,0.15)", boxShadow: "0 4px 24px rgba(0,0,0,0.6)" }}>
-                <img src={src} alt={`Scholar Net screen ${i + 1}`} className="w-full object-cover object-top" style={{ maxHeight: 240 }} />
+                <img src={src} alt={`Scholar Net screen ${i + 1}`} className="w-full object-cover object-top" style={{ maxHeight: 170 }} />
               </motion.div>
             ))}
           </div>

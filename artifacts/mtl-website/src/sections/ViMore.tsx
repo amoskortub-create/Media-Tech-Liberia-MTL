@@ -113,22 +113,22 @@ export function ViMore() {
           {/* Right: phone stack */}
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="flex-1 flex justify-center w-full">
-            <div className="relative w-full max-w-[320px] mx-auto" style={{ minHeight: 520 }}>
+            <div className="relative w-full max-w-[220px] mx-auto" style={{ minHeight: 360 }}>
               <motion.div initial={{ opacity: 0, rotate: 8, y: 20 }} whileInView={{ opacity: 1, rotate: 8, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: 0.3 }}
-                className="absolute -right-4 top-6 w-[185px] rounded-[28px] overflow-hidden"
+                className="absolute -right-4 top-4 w-[128px] rounded-[20px] overflow-hidden"
                 style={{ zIndex: 1, border: "2px solid rgba(124,58,237,0.3)", boxShadow: "0 8px 40px rgba(0,0,0,0.7)" }}>
-                <img src={screenshot3} alt="ViMore Music Hub" className="w-full object-cover object-top" style={{ maxHeight: 370 }} />
+                <img src={screenshot3} alt="ViMore Music Hub" className="w-full object-cover object-top" style={{ maxHeight: 256 }} />
               </motion.div>
               <motion.div initial={{ opacity: 0, rotate: -6, y: 28 }} whileInView={{ opacity: 1, rotate: -6, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: 0.15 }}
-                className="absolute -left-4 top-10 w-[185px] rounded-[28px] overflow-hidden"
+                className="absolute -left-4 top-7 w-[128px] rounded-[20px] overflow-hidden"
                 style={{ zIndex: 2, border: "2px solid rgba(6,182,212,0.25)", boxShadow: "0 8px 40px rgba(0,0,0,0.7)" }}>
-                <img src={screenshot2} alt="ViMore Menu" className="w-full object-cover object-top" style={{ maxHeight: 370 }} />
+                <img src={screenshot2} alt="ViMore Menu" className="w-full object-cover object-top" style={{ maxHeight: 256 }} />
               </motion.div>
               <motion.div initial={{ opacity: 0, y: 36 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                className="relative mx-auto w-[245px] rounded-[34px] overflow-hidden"
-                style={{ zIndex: 3, marginTop: 55, marginBottom: 40, border: "3px solid rgba(124,58,237,0.55)", boxShadow: "0 0 50px rgba(124,58,237,0.25), 0 24px 60px rgba(0,0,0,0.8)" }}>
+                className="relative mx-auto w-[168px] rounded-[24px] overflow-hidden"
+                style={{ zIndex: 3, marginTop: 38, marginBottom: 28, border: "3px solid rgba(124,58,237,0.55)", boxShadow: "0 0 40px rgba(124,58,237,0.25), 0 24px 60px rgba(0,0,0,0.8)" }}>
                 <img src={screenshot1} alt="ViMore Home Feed" className="w-full object-cover object-top" data-testid="img-vimore-feed" />
               </motion.div>
             </div>

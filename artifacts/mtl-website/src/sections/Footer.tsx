@@ -65,9 +65,11 @@ function scrollTo(id: string) {
 interface FooterProps {
   onOpenPrivacy: () => void;
   onOpenTerms: () => void;
+  onOpenDataPolicy: () => void;
+  onOpenSLA: () => void;
 }
 
-export function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps) {
+export function Footer({ onOpenPrivacy, onOpenTerms, onOpenDataPolicy, onOpenSLA }: FooterProps) {
   return (
     <footer
       id="contact"
@@ -213,10 +215,20 @@ export function Footer({ onOpenPrivacy, onOpenTerms }: FooterProps) {
             >
               Terms of Service
             </button>
-            {["Data Policy", "SLA"].map((l) => (
-              <a key={l} href="#" className="text-[11px] transition-colors hover:text-white/50"
-                style={{ color: "rgba(255,255,255,0.2)" }}>{l}</a>
-            ))}
+            <button
+              onClick={onOpenDataPolicy}
+              className="text-[11px] transition-colors hover:text-white/50 cursor-pointer"
+              style={{ color: "rgba(255,255,255,0.2)" }}
+            >
+              Data Policy
+            </button>
+            <button
+              onClick={onOpenSLA}
+              className="text-[11px] transition-colors hover:text-white/50 cursor-pointer"
+              style={{ color: "rgba(255,255,255,0.2)" }}
+            >
+              SLA
+            </button>
           </div>
         </div>
       </div>
