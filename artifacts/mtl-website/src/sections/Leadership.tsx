@@ -109,7 +109,7 @@ export function Leadership() {
             viewport={{ once: true }}
             transition={{ delay: 0.06 }}
             className="font-black text-white mb-5 leading-tight"
-            style={{ fontSize: "clamp(2rem,4.5vw,3.5rem)" }}
+            style={{ fontSize: "clamp(1.4rem,3vw,2.2rem)" }}
           >
             The Team Building
             <br />
@@ -266,25 +266,28 @@ export function Leadership() {
           </div>
         </motion.div>
 
-        {/* ── Rest of team (highest rank first) ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+        {/* ── Rest of team — horizontal scroll row ── */}
+        <div
+          className="flex gap-4 mb-20 pb-3 -mx-5 px-5 sm:-mx-8 sm:px-8"
+          style={{ overflowX: "auto", scrollbarWidth: "none" }}
+        >
           {team.map((m, i) => (
             <motion.div
               key={m.name}
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.09 }}
-              whileHover={{ y: -6 }}
-              className="rounded-2xl overflow-hidden flex flex-col transition-all duration-300"
-              style={{ background: "#0d0d0d", border: `1px solid ${m.color}18` }}
+              transition={{ delay: i * 0.07 }}
+              whileHover={{ y: -4 }}
+              className="rounded-xl overflow-hidden flex flex-col flex-shrink-0 transition-all duration-300"
+              style={{ width: 180, background: "#0d0d0d", border: `1px solid ${m.color}22` }}
             >
               {/* Top accent */}
               <div className="h-[1px]" style={{ background: `linear-gradient(90deg, ${m.color}90, transparent)` }} />
 
               {/* Photo or initials */}
               {m.photo ? (
-                <div className="w-full h-52 overflow-hidden flex-shrink-0">
+                <div className="w-full overflow-hidden flex-shrink-0" style={{ height: 160 }}>
                   <img
                     src={m.photo}
                     alt={`${m.name} — ${m.role}`}
@@ -293,18 +296,25 @@ export function Leadership() {
                   />
                 </div>
               ) : (
-                <InitialsAvatar name={m.name} color={m.color} />
+                <div
+                  className="w-full flex items-center justify-center flex-shrink-0"
+                  style={{ height: 160, background: `${m.color}10` }}
+                >
+                  <span
+                    className="font-black select-none"
+                    style={{ fontSize: "2.2rem", color: m.color, opacity: 0.7 }}
+                  >
+                    {m.name.split(" ").filter((_, idx) => idx === 0 || idx === m.name.split(" ").length - 1).map(w => w[0]).join("").toUpperCase().slice(0, 2)}
+                  </span>
+                </div>
               )}
 
               {/* Info */}
-              <div className="p-5 flex flex-col gap-2.5 flex-1">
-                <div className="w-5 h-[2px] rounded-full" style={{ background: m.color }} />
-                <h3 className="text-[15px] font-black text-white leading-snug">{m.name}</h3>
-                <p className="text-[11px] font-black uppercase tracking-wider" style={{ color: m.color }}>
+              <div className="p-3 flex flex-col gap-1.5 flex-1">
+                <div className="w-4 h-[2px] rounded-full" style={{ background: m.color }} />
+                <h3 className="text-[13px] font-black text-white leading-snug">{m.name}</h3>
+                <p className="text-[10px] font-black uppercase tracking-wider" style={{ color: m.color }}>
                   {m.role}
-                </p>
-                <p className="text-[12px] leading-relaxed" style={{ color: "rgba(255,255,255,0.42)" }}>
-                  {m.bio}
                 </p>
               </div>
             </motion.div>

@@ -37,7 +37,7 @@ export function ScholarNet() {
           </div>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ delay: 0.08 }} className="font-black text-white mb-5 leading-tight"
-            style={{ fontSize: "clamp(2rem,4.5vw,3.5rem)" }}>
+            style={{ fontSize: "clamp(1.4rem,3vw,2.2rem)" }}>
             Scholar Net
             <span style={{ background: "linear-gradient(135deg,#06b6d4,#0891b2)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               {" "}— Liberia's Digital Campus

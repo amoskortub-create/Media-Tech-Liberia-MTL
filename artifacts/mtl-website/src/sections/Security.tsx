@@ -44,7 +44,7 @@ export function Security() {
           </motion.p>
           <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             transition={{ delay: 0.06 }} className="font-black text-white mb-5 leading-tight"
-            style={{ fontSize: "clamp(2rem,4.5vw,3.5rem)" }}>
+            style={{ fontSize: "clamp(1.4rem,3vw,2.2rem)" }}>
             Sovereign Infrastructure,<br />
             <span style={{ background: "linear-gradient(135deg,#a78bfa,#7c3aed,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
               Bulletproof Security

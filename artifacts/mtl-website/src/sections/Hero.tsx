@@ -60,7 +60,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.1 }}
           >
             <h1 className="font-black leading-[1.0] tracking-tighter mb-8"
-              style={{ fontSize: "clamp(2.8rem, 7vw, 6rem)" }}>
+              style={{ fontSize: "clamp(1.8rem, 4.5vw, 3.5rem)" }}>
               <span className="text-white block">Engineering Africa's</span>
               <span className="text-white block">Digital Future Through</span>
               <span

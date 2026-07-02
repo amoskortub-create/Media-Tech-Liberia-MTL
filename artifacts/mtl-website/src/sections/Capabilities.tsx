@@ -71,7 +71,7 @@ export function Capabilities() {
             viewport={{ once: true }}
             transition={{ delay: 0.06 }}
             className="font-black leading-tight text-white mb-5"
-            style={{ fontSize: "clamp(2rem,4.5vw,3.5rem)" }}
+            style={{ fontSize: "clamp(1.4rem,3vw,2.2rem)" }}
           >
             Built for Africa's
             <br />
