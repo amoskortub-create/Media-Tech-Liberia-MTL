@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, MessageCircle, Zap, Globe, Shield, Code2 } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle, Code2, Shield, Globe, Zap } from "lucide-react";
 import mtlLogo from "@assets/1775314197014_transcpr_1779748663765.jpg";
 
 const contactItems = [
@@ -15,7 +15,7 @@ const contactItems = [
     label: "Phone",
     value: "+231 778 451 835",
     href: "tel:+231778451835",
-    color: "#3b82f6",
+    color: "#a78bfa",
   },
   {
     icon: Mail,
@@ -29,7 +29,7 @@ const contactItems = [
     label: "Location",
     value: "Paynesville City, Liberia 🇱🇷",
     href: "#",
-    color: "#f59e0b",
+    color: "#fbbf24",
   },
 ];
 
@@ -50,13 +50,6 @@ const pillars = [
   { icon: Zap, label: "High Performance" },
 ];
 
-const legalLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
-  { label: "Data Policy", href: "#" },
-  { label: "SLA", href: "#" },
-];
-
 function scrollTo(id: string) {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -64,84 +57,107 @@ function scrollTo(id: string) {
 
 export function Footer() {
   return (
-    <footer id="contact" style={{ background: "hsl(222 47% 3%)", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
-      {/* Main footer content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-14">
+    <footer
+      id="contact"
+      style={{ background: "#030303", borderTop: "1px solid rgba(124,58,237,0.15)" }}
+    >
+      {/* Top glow line */}
+      <div
+        className="h-[1px] w-full"
+        style={{ background: "linear-gradient(90deg, transparent, rgba(124,58,237,0.6), rgba(6,182,212,0.4), transparent)" }}
+      />
 
-          {/* Brand column */}
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-14">
+          {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0"
-                style={{ border: "1px solid rgba(59,130,246,0.3)", boxShadow: "0 0 12px rgba(59,130,246,0.2)" }}>
-                <img src={mtlLogo} alt="Media Tech Liberia" className="w-full h-full object-cover" />
+            <button onClick={() => scrollTo("hero")} className="flex items-center gap-3 mb-6 group">
+              <div
+                className="w-11 h-11 rounded-xl overflow-hidden flex-shrink-0"
+                style={{ border: "1px solid rgba(124,58,237,0.4)", boxShadow: "0 0 18px rgba(124,58,237,0.2)" }}
+              >
+                <img src={mtlLogo} alt="MTL" className="w-full h-full object-cover" />
               </div>
               <div>
-                <p className="text-[13px] font-bold text-white tracking-widest uppercase">Media Tech Liberia</p>
-                <p className="text-[10px] font-semibold tracking-wider uppercase" style={{ color: "#60a5fa" }}>
-                  West Africa's Digital Layer
+                <p className="text-[12px] font-black tracking-widest text-white uppercase leading-none">
+                  Media Tech Liberia
+                </p>
+                <p className="text-[9px] font-black tracking-[0.2em] uppercase mt-0.5"
+                  style={{ color: "rgba(167,139,250,0.6)" }}>
+                  West Africa's Digital Infrastructure Layer
                 </p>
               </div>
-            </div>
+            </button>
 
-            <p className="text-[13px] leading-relaxed mb-6" style={{ color: "rgba(255,255,255,0.45)" }}>
-              Engineering Africa's digital future through high-performance, sovereign, data-lite software infrastructure. Built in Liberia. Built for Africa.
+            <p className="text-[13px] leading-relaxed mb-7" style={{ color: "rgba(255,255,255,0.38)" }}>
+              Engineering Africa's digital future through high-performance, sovereign, data-lite software
+              infrastructure. Built in Liberia. Built for Africa.
             </p>
 
-            {/* Pillars */}
             <div className="grid grid-cols-2 gap-2">
               {pillars.map((p) => (
-                <div key={p.label} className="flex items-center gap-2 px-3 py-2 rounded-lg"
-                  style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}>
-                  <p.icon size={12} className="text-blue-400 flex-shrink-0" />
-                  <span className="text-[11px] font-semibold" style={{ color: "rgba(255,255,255,0.55)" }}>{p.label}</span>
+                <div
+                  key={p.label}
+                  className="flex items-center gap-2 px-3 py-2.5 rounded-lg"
+                  style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}
+                >
+                  <p.icon size={12} style={{ color: "#a78bfa" }} className="flex-shrink-0" />
+                  <span className="text-[11px] font-bold" style={{ color: "rgba(255,255,255,0.5)" }}>{p.label}</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Contact column */}
+          {/* Contact */}
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>
-              Contact
+            <p className="text-[10px] font-black tracking-[0.25em] uppercase mb-6" style={{ color: "rgba(255,255,255,0.25)" }}>
+              Contact Us
             </p>
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-4">
               {contactItems.map((item) => (
                 <motion.a
                   key={item.label}
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  whileHover={{ x: 3 }}
+                  whileHover={{ x: 4 }}
                   className="flex items-center gap-3 group"
                   data-testid={`link-contact-${item.label.toLowerCase()}`}
                 >
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors"
-                    style={{ background: `${item.color}12`, border: `1px solid ${item.color}25` }}>
+                  <div
+                    className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ background: `${item.color}10`, border: `1px solid ${item.color}22` }}
+                  >
                     <item.icon size={14} style={{ color: item.color }} />
                   </div>
                   <div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.3)" }}>{item.label}</div>
-                    <div className="text-[13px] font-medium group-hover:text-white transition-colors"
-                      style={{ color: "rgba(255,255,255,0.65)" }}>{item.value}</div>
+                    <div className="text-[9px] font-black uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.25)" }}>
+                      {item.label}
+                    </div>
+                    <div
+                      className="text-[13px] font-semibold group-hover:text-white transition-colors"
+                      style={{ color: "rgba(255,255,255,0.6)" }}
+                    >
+                      {item.value}
+                    </div>
                   </div>
                 </motion.a>
               ))}
             </div>
           </div>
 
-          {/* Navigation column */}
+          {/* Navigation */}
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-widest mb-5" style={{ color: "rgba(255,255,255,0.35)" }}>
+            <p className="text-[10px] font-black tracking-[0.25em] uppercase mb-6" style={{ color: "rgba(255,255,255,0.25)" }}>
               Navigation
             </p>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-1">
               {navLinks.map((link) => (
                 <button
                   key={link.label}
                   onClick={() => scrollTo(link.href)}
-                  className="text-left text-[13px] font-medium transition-colors hover:text-white py-1"
-                  style={{ color: "rgba(255,255,255,0.45)" }}
+                  className="text-left py-2 text-[13px] font-semibold transition-colors hover:text-white"
+                  style={{ color: "rgba(255,255,255,0.42)" }}
                 >
                   {link.label}
                 </button>
@@ -149,42 +165,41 @@ export function Footer() {
             </div>
 
             {/* Status */}
-            <div className="mt-8 flex items-center gap-2 px-4 py-3 rounded-xl"
-              style={{ background: "rgba(16,185,129,0.05)", border: "1px solid rgba(16,185,129,0.1)" }}>
+            <div
+              className="mt-8 flex items-center gap-2.5 px-4 py-3 rounded-xl"
+              style={{ background: "rgba(52,211,153,0.04)", border: "1px solid rgba(52,211,153,0.12)" }}
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-[12px] font-semibold" style={{ color: "#34d399" }}>All Systems Operational</span>
+              <span className="text-[12px] font-black" style={{ color: "#34d399" }}>All Systems Operational</span>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div style={{ height: "1px", background: "rgba(255,255,255,0.05)" }} className="mb-8" />
+        <div style={{ height: "1px", background: "rgba(255,255,255,0.04)" }} className="mb-8" />
 
-        {/* Bottom bar */}
+        {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[12px]" style={{ color: "rgba(255,255,255,0.3)" }}>
-            © 2026 Media Tech Liberia. All rights reserved. · Built in Liberia 🇱🇷
+          <p className="text-[12px]" style={{ color: "rgba(255,255,255,0.22)" }}>
+            © 2026 Media Tech Liberia · All rights reserved · Built in Liberia 🇱🇷
           </p>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            {legalLinks.map((link) => (
-              <a key={link.label} href={link.href}
-                className="text-[11px] transition-colors hover:text-white/60"
-                style={{ color: "rgba(255,255,255,0.25)" }}>
-                {link.label}
-              </a>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {["Privacy Policy", "Terms of Service", "Data Policy", "SLA"].map((l) => (
+              <a key={l} href="#" className="text-[11px] transition-colors hover:text-white/50"
+                style={{ color: "rgba(255,255,255,0.2)" }}>{l}</a>
             ))}
           </div>
         </div>
       </div>
 
-      {/* Compliance bar */}
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.04)", background: "rgba(0,0,0,0.3)" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <p className="text-[11px] text-center leading-relaxed" style={{ color: "rgba(255,255,255,0.2)" }}>
-            © 2026 Media Tech Liberia. All Rights Reserved. Engineered in Paynesville City, Liberia. All custom applications are deployed on self-hosted, sovereign cloud nodes. Business registration, data policies, and institutional SLAs are maintained in strict compliance with the Liberia Business Registry (LBR) frameworks.
+      {/* Compliance */}
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.03)", background: "rgba(0,0,0,0.5)" }}>
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5">
+          <p className="text-[11px] text-center leading-relaxed" style={{ color: "rgba(255,255,255,0.15)" }}>
+            © 2026 Media Tech Liberia. All Rights Reserved. Engineered in Paynesville City, Liberia. All custom applications are deployed on self-hosted, sovereign cloud nodes. Compliance maintained under Liberia Business Registry (LBR) frameworks.
           </p>
         </div>
       </div>

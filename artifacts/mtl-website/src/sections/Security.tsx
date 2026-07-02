@@ -1,130 +1,94 @@
 import { motion } from "framer-motion";
-import { Lock, Zap, ShieldCheck, Server, Shield } from "lucide-react";
+import { Lock, Zap, ShieldCheck, Server } from "lucide-react";
 
 const cards = [
   {
-    icon: Lock,
+    icon: Lock, num: "01", color: "#a78bfa",
     title: "Data Encryption & Isolation",
     body: "All custom ERP and management architectures are built with strict database tenant isolation and encrypted end-to-end using AES-256 standards. Your internal corporate numbers, employee logs, and financial records remain completely under your control.",
     tag: "AES-256 · Tenant Isolation",
-    color: "#3b82f6",
   },
   {
-    icon: Zap,
+    icon: Zap, num: "02", color: "#34d399",
     title: "Secured Payment Handshakes",
     body: "Our FinTech integrations utilize secure, cryptographic webhook handshakes with local Mobile Money APIs (Orange Money & Lonestar MTN). No transaction data is ever cached insecurely, preventing fraud at the network layer.",
     tag: "Cryptographic Webhooks · Zero Cache",
-    color: "#10b981",
   },
   {
-    icon: ShieldCheck,
+    icon: ShieldCheck, num: "03", color: "#06b6d4",
     title: "Self-Hosted Sovereign Nodes",
     body: "Every system we deploy runs on self-hosted Appwrite infrastructure — never on a foreign cloud provider. Your data stays within the boundaries you control, with no third-party surveillance, no vendor lock-in, and no surprise data residency violations.",
     tag: "Appwrite Powered · On-Premise",
-    color: "#8b5cf6",
   },
   {
-    icon: Server,
+    icon: Server, num: "04", color: "#fbbf24",
     title: "Infrastructure Access Control",
     body: "Role-based access permissions are enforced at both the API and database level. Employees only see what they need. Audit logs capture every sensitive operation — giving your compliance team a full, tamper-proof record of system activity.",
     tag: "RBAC · Audit Logs",
-    color: "#f59e0b",
   },
 ];
 
 export function Security() {
   return (
-    <section className="py-24 relative overflow-hidden" id="security"
-      style={{ background: "hsl(222 47% 4%)", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
-      <div className="absolute inset-0 grid-bg" />
+    <section className="py-28 relative overflow-hidden" id="security"
+      style={{ background: "#050505", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+      <div className="absolute inset-0 line-grid" />
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(59,130,246,0.06) 0%, transparent 70%)" }} />
+        style={{ background: "radial-gradient(ellipse 60% 40% at 50% 100%, rgba(124,58,237,0.07) 0%, transparent 70%)" }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 border text-[11px] font-bold uppercase tracking-widest"
-            style={{ background: "rgba(59,130,246,0.08)", borderColor: "rgba(59,130,246,0.2)", color: "#60a5fa" }}
-          >
-            <Shield size={10} />
-            Enterprise Security & Data Sovereignty
-          </motion.div>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.05 }}
-            className="text-3xl md:text-5xl font-black text-white mb-4 leading-tight max-w-3xl"
-          >
-            Sovereign Infrastructure,
-            <span style={{ background: "linear-gradient(135deg,#3b82f6,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}> Bulletproof Security</span>
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 relative z-10">
+        <div className="mb-20">
+          <motion.p initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            className="text-[11px] font-black tracking-[0.25em] uppercase mb-4" style={{ color: "#a78bfa" }}>
+            — Enterprise Security & Data Sovereignty
+          </motion.p>
+          <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ delay: 0.06 }} className="font-black text-white mb-5 leading-tight"
+            style={{ fontSize: "clamp(2rem,4.5vw,3.5rem)" }}>
+            Sovereign Infrastructure,<br />
+            <span style={{ background: "linear-gradient(135deg,#a78bfa,#7c3aed,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+              Bulletproof Security
+            </span>
           </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-[15px] max-w-xl leading-relaxed"
-            style={{ color: "rgba(255,255,255,0.5)" }}
-          >
+          <motion.p initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+            transition={{ delay: 0.1 }} className="text-[15px] max-w-xl leading-relaxed"
+            style={{ color: "rgba(255,255,255,0.42)" }}>
             How we protect corporate intelligence and secure local financial pipelines across all our custom integrations.
           </motion.p>
         </div>
 
-        {/* Cards grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
-          {cards.map((card, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -4 }}
-              className="relative overflow-hidden rounded-2xl p-6 flex flex-col gap-4 transition-all duration-300"
-              style={{
-                background: "rgba(255,255,255,0.02)",
-                border: `1px solid ${card.color}18`,
-              }}
-            >
-              {/* Top accent */}
-              <div className="absolute top-0 left-0 right-0 h-[2px]"
-                style={{ background: `linear-gradient(90deg, ${card.color}, transparent)` }} />
-
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center"
-                style={{ background: `${card.color}12`, border: `1px solid ${card.color}25` }}>
-                <card.icon size={18} style={{ color: card.color }} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+          {cards.map((c, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ delay: i * 0.09 }} whileHover={{ y: -5 }}
+              className="rounded-2xl p-7 flex flex-col gap-5 relative overflow-hidden transition-all duration-300"
+              style={{ background: "#0d0d0d", border: `1px solid ${c.color}1a` }}>
+              <div className="absolute top-0 left-0 right-0 h-[1px]"
+                style={{ background: `linear-gradient(90deg, ${c.color}80, transparent)` }} />
+              <div className="flex items-start justify-between">
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center"
+                  style={{ background: `${c.color}12`, border: `1px solid ${c.color}25` }}>
+                  <c.icon size={20} style={{ color: c.color }} />
+                </div>
+                <span className="font-black text-[2.5rem] leading-none" style={{ color: `${c.color}12` }}>{c.num}</span>
               </div>
-
               <div>
-                <h3 className="text-[15px] font-bold text-white mb-2">{card.title}</h3>
-                <p className="text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.48)" }}>{card.body}</p>
+                <h3 className="text-[16px] font-black text-white mb-3">{c.title}</h3>
+                <p className="text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.44)" }}>{c.body}</p>
               </div>
-
-              <div className="mt-auto">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-[11px] font-semibold tracking-wide"
-                  style={{ background: `${card.color}10`, border: `1px solid ${card.color}25`, color: card.color }}>
-                  {card.tag}
-                </span>
-              </div>
+              <span className="mt-auto self-start px-3 py-1.5 rounded-lg text-[11px] font-black tracking-wide"
+                style={{ background: `${c.color}10`, border: `1px solid ${c.color}22`, color: c.color }}>
+                {c.tag}
+              </span>
             </motion.div>
           ))}
         </div>
 
-        {/* Trust bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-x-8 gap-y-3"
-        >
+        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+          className="flex flex-wrap justify-center gap-x-10 gap-y-3">
           {["End-to-End Encrypted", "No Foreign Cloud", "Audit Logging", "Zero Vendor Lock-In", "Mobile Money Secured"].map((item) => (
-            <div key={item} className="flex items-center gap-2 text-[12px] font-medium" style={{ color: "rgba(255,255,255,0.4)" }}>
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0" />
+            <div key={item} className="flex items-center gap-2 text-[12px] font-bold" style={{ color: "rgba(255,255,255,0.32)" }}>
+              <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#a78bfa" }} />
               {item}
             </div>
           ))}
