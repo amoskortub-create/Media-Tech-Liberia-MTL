@@ -126,7 +126,7 @@ export function DataPolicy({ onClose }: Props) {
             </Section>
 
             <Section title="7. Data Retention">
-              <p>We retain your data for as long as your account is active or as required to provide services. You may request deletion of your account and associated data at any time by contacting us at <span className="text-purple-400">contact@mediatechliberia.com</span>. Deletion is completed within 30 days of a verified request.</p>
+              <p>We retain your data for as long as your account is active or as required to provide services. You may request deletion of your account and associated data at any time by contacting us at <span className="text-purple-400">mediatechliberia@gmail.com</span>. Deletion is completed within 30 days of a verified request.</p>
             </Section>
 
             <Section title="8. Your Rights">
@@ -137,7 +137,7 @@ export function DataPolicy({ onClose }: Props) {
                 <li><strong className="text-white">Portability</strong> — request your data in a machine-readable format</li>
                 <li><strong className="text-white">Objection</strong> — object to certain types of data processing</li>
               </ul>
-              <p>To exercise any of these rights, contact us at <span className="text-purple-400">contact@mediatechliberia.com</span> or call <span className="text-purple-400">+231 778 451 835</span>.</p>
+              <p>To exercise any of these rights, contact us at <span className="text-purple-400">mediatechliberia@gmail.com</span> or call <span className="text-purple-400">+231 778 451 835</span>.</p>
             </Section>
 
             <Section title="9. Security">
@@ -151,7 +151,7 @@ export function DataPolicy({ onClose }: Props) {
             <Section title="11. Contact">
               <p>For any data-related questions or requests, reach us at:</p>
               <ul className="list-disc pl-5 space-y-1">
-                <li>Email: <span className="text-purple-400">contact@mediatechliberia.com</span></li>
+                <li>Email: <span className="text-purple-400">mediatechliberia@gmail.com</span></li>
                 <li>Phone: <span className="text-purple-400">+231 778 451 835</span></li>
                 <li>Address: Paynesville City, Liberia</li>
               </ul>

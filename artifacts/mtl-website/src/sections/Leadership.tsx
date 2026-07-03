@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import amosPhoto from "@assets/Face_Clean-up_Studio_In_a_studio_portrait_style_a_man_with_dar_1779748900032.jpg";
+import pastorPhoto from "@assets/1780535304812_1783041621431.jpg";
 import fredPhoto from "@assets/1782961077924_1782961146710.jpg";
 import ujayPhoto from "@assets/1782961027228_1782961146999.jpg";
 import ebenezerPhoto from "@assets/IMG-20260503-WA0006_1782961192424.jpg";
@@ -17,7 +18,7 @@ const team = [
   {
     name: "Pastor Semeiator T Cheason",
     role: "Vice President",
-    photo: null,
+    photo: pastorPhoto,
     color: "#f59e0b",
     bio: "Drives strategic growth and community engagement, championing Media Tech Liberia's mission across Liberian communities and partnerships.",
   },

@@ -115,7 +115,7 @@ export function SLA({ onClose }: Props) {
 
             <Section title="4. Support Channels">
               <ul className="list-disc pl-5 space-y-1">
-                <li>Email: <span className="text-emerald-400">contact@mediatechliberia.com</span></li>
+                <li>Email: <span className="text-emerald-400">mediatechliberia@gmail.com</span></li>
                 <li>WhatsApp: <span className="text-emerald-400">+231 778 451 835</span></li>
                 <li>Support hours: Monday–Friday, 8:00 AM–6:00 PM WAT</li>
                 <li>Emergency P1 incidents: 24/7 via WhatsApp</li>
@@ -138,7 +138,7 @@ export function SLA({ onClose }: Props) {
                 <MetricRow label="95.0%–98.9% uptime" value="10% credit" color="#f59e0b" />
                 <MetricRow label="Below 95.0% uptime" value="25% credit" color="#f87171" />
               </div>
-              <p className="mt-3">Credits are applied to the next billing cycle. Credits are the sole and exclusive remedy for SLA failures. To claim a credit, submit a request within 30 days of the incident to <span className="text-emerald-400">contact@mediatechliberia.com</span>.</p>
+              <p className="mt-3">Credits are applied to the next billing cycle. Credits are the sole and exclusive remedy for SLA failures. To claim a credit, submit a request within 30 days of the incident to <span className="text-emerald-400">mediatechliberia@gmail.com</span>.</p>
             </Section>
 
             <Section title="7. Customer Responsibilities">
@@ -168,7 +168,7 @@ export function SLA({ onClose }: Props) {
 
             <Section title="10. Contact">
               <ul className="list-disc pl-5 space-y-1">
-                <li>Email: <span className="text-emerald-400">contact@mediatechliberia.com</span></li>
+                <li>Email: <span className="text-emerald-400">mediatechliberia@gmail.com</span></li>
                 <li>Phone: <span className="text-emerald-400">+231 778 451 835</span></li>
                 <li>Address: Paynesville City, Liberia</li>
               </ul>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { X, Shield, Mail, Phone, MapPin } from "lucide-react";
 
 const CONTACT = {
-  email: "contact@mediatechliberia.com",
+  email: "mediatechliberia@gmail.com",
   phone: "+231 778 451 835",
   address: "Paynesville City, Liberia",
   website: "mediatechliberia.com",

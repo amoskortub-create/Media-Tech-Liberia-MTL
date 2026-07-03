@@ -20,8 +20,8 @@ const contactItems = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@mediatechliberia.com",
-    href: "mailto:contact@mediatechliberia.com",
+    value: "mediatechliberia@gmail.com",
+    href: "mailto:mediatechliberia@gmail.com",
     color: "#06b6d4",
   },
   {
