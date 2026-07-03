@@ -48,6 +48,8 @@ const navLinks = [
   { label: "Security", href: "security" },
   { label: "Process", href: "workflow" },
   { label: "Team", href: "about" },
+  { label: "Videos", href: "videos" },
+  { label: "Metrics", href: "metrics" },
 ];
 
 const pillars = [
@@ -172,6 +174,7 @@ export function Footer({ onOpenPrivacy, onOpenTerms, onOpenDataPolicy, onOpenSLA
                   onClick={() => scrollTo(link.href)}
                   className="text-left py-2 text-[13px] font-semibold transition-colors hover:text-white"
                   style={{ color: "rgba(255,255,255,0.42)" }}
+                  aria-label={`Go to ${link.label}`}
                 >
                   {link.label}
                 </button>
@@ -198,7 +201,7 @@ export function Footer({ onOpenPrivacy, onOpenTerms, onOpenDataPolicy, onOpenSLA
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[12px]" style={{ color: "rgba(255,255,255,0.22)" }}>
-            © 2026 Media Tech Liberia · All rights reserved · Built in Liberia 🇱🇷
+            © {new Date().getFullYear()} Media Tech Liberia · All rights reserved · Built in Liberia 🇱🇷
           </p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <button
@@ -237,7 +240,7 @@ export function Footer({ onOpenPrivacy, onOpenTerms, onOpenDataPolicy, onOpenSLA
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.03)", background: "rgba(0,0,0,0.5)" }}>
         <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5">
           <p className="text-[11px] text-center leading-relaxed" style={{ color: "rgba(255,255,255,0.15)" }}>
-            © 2026 Media Tech Liberia. All Rights Reserved. Engineered in Paynesville City, Liberia. All custom applications are deployed on self-hosted, sovereign cloud nodes. Compliance maintained under Liberia Business Registry (LBR) frameworks.
+            © {new Date().getFullYear()} Media Tech Liberia. All Rights Reserved. Engineered in Paynesville City, Liberia. All custom applications are deployed on self-hosted, sovereign cloud nodes. Compliance maintained under Liberia Business Registry (LBR) frameworks.
           </p>
         </div>
       </div>

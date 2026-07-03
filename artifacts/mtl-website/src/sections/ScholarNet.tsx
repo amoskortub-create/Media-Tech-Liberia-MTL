@@ -69,8 +69,8 @@ export function ScholarNet() {
             </div>
             <div className="flex-shrink-0 text-center px-6 py-4 rounded-xl"
               style={{ background: "rgba(251,191,36,0.08)", border: "1px solid rgba(251,191,36,0.18)" }}>
-              <div className="text-3xl font-black" style={{ color: "#fbbf24" }}>2026</div>
-              <div className="text-[10px] font-black tracking-widest uppercase mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>Coming Soon</div>
+              <div className="text-3xl font-black" style={{ color: "#fbbf24" }}>Aug 20</div>
+              <div className="text-[10px] font-black tracking-widest uppercase mt-1" style={{ color: "rgba(255,255,255,0.35)" }}>Launching 2026</div>
             </div>
           </div>
         </motion.div>

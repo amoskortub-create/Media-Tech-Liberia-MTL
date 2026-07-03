@@ -11,6 +11,7 @@ const links = [
   { name: "Security", href: "security" },
   { name: "Process", href: "workflow" },
   { name: "Team", href: "about" },
+  { name: "Videos", href: "videos" },
 ];
 
 function scrollTo(id: string) {
@@ -51,6 +52,7 @@ export function Navigation() {
             onClick={() => scrollTo("hero")}
             className="flex items-center gap-3 flex-shrink-0 group"
             data-testid="button-logo-home"
+            aria-label="Go to top"
           >
             <div
               className="w-9 h-9 rounded-lg overflow-hidden flex-shrink-0 transition-all duration-300"
@@ -89,6 +91,7 @@ export function Navigation() {
                   (e.target as HTMLElement).style.background = "transparent";
                 }}
                 data-testid={`button-nav-${l.href}`}
+                aria-label={`Go to ${l.name}`}
               >
                 {l.name}
               </button>
@@ -104,6 +107,7 @@ export function Navigation() {
                 boxShadow: "0 0 20px rgba(124,58,237,0.35)",
               }}
               data-testid="button-nav-cta"
+              aria-label="Contact us"
             >
               Contact Us
             </button>
@@ -141,7 +145,7 @@ export function Navigation() {
                 style={{ borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                 <span className="text-[11px] font-black tracking-widest text-white/50 uppercase">Menu</span>
                 <button onClick={() => setIsOpen(false)} className="p-1.5 rounded-lg"
-                  style={{ color: "rgba(255,255,255,0.4)" }}>
+                  style={{ color: "rgba(255,255,255,0.4)" }} aria-label="Close menu">
                   <X size={18} />
                 </button>
               </div>
