@@ -159,6 +159,7 @@ export function Navigation() {
                     onClick={() => handleNav(l.href)}
                     className="text-left px-4 py-3 rounded-xl text-[13px] font-semibold transition-all"
                     style={{ color: "rgba(255,255,255,0.6)" }}
+                    aria-label={`Go to ${l.name}`}
                   >
                     {l.name}
                   </motion.button>
@@ -169,6 +170,7 @@ export function Navigation() {
                   onClick={() => handleNav("contact")}
                   className="w-full py-3 rounded-xl font-bold text-[13px] text-white"
                   style={{ background: "linear-gradient(135deg,#7c3aed,#4f46e5)", boxShadow: "0 0 24px rgba(124,58,237,0.4)" }}
+                  aria-label="Contact us"
                 >
                   Contact Us
                 </button>
