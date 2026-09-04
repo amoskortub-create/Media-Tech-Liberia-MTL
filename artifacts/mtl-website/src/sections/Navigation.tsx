@@ -7,6 +7,7 @@ const links = [
   { name: "Capabilities", href: "capabilities" },
   { name: "Services", href: "services" },
   { name: "ViMore", href: "viMore" },
+  { name: "In Development", href: "development" },
   { name: "Security", href: "security" },
   { name: "Process", href: "workflow" },
   { name: "Team", href: "about" },

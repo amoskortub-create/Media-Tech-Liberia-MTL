@@ -10,6 +10,7 @@ import { Hero } from "./sections/Hero";
 import { Capabilities } from "./sections/Capabilities";
 import { Services } from "./sections/Services";
 import { ViMore } from "./sections/ViMore";
+import { DevelopmentProducts } from "./sections/DevelopmentProducts";
 import { Security } from "./sections/Security";
 import { DeliveryWorkflow } from "./sections/DeliveryWorkflow";
 import { Leadership } from "./sections/Leadership";
@@ -33,6 +34,7 @@ function App() {
               <Capabilities />
               <Services />
               <ViMore />
+              <DevelopmentProducts />
               <Security />
               <DeliveryWorkflow />
               <Leadership />
