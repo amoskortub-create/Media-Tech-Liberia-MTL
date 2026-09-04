@@ -46,7 +46,6 @@ const navLinks = [
   { label: "Security", href: "security" },
   { label: "Process", href: "workflow" },
   { label: "Team", href: "about" },
-  { label: "Metrics", href: "metrics" },
 ];
 
 const pillars = [
@@ -63,12 +62,9 @@ function scrollTo(id: string) {
 
 interface FooterProps {
   onOpenPrivacy: () => void;
-  onOpenTerms: () => void;
-  onOpenDataPolicy: () => void;
-  onOpenSLA: () => void;
 }
 
-export function Footer({ onOpenPrivacy, onOpenTerms, onOpenDataPolicy, onOpenSLA }: FooterProps) {
+export function Footer({ onOpenPrivacy }: FooterProps) {
   return (
     <footer
       id="contact"
@@ -178,17 +174,6 @@ export function Footer({ onOpenPrivacy, onOpenTerms, onOpenDataPolicy, onOpenSLA
               ))}
             </div>
 
-            {/* Status */}
-            <div
-              className="mt-8 flex items-center gap-2.5 px-4 py-3 rounded-xl"
-              style={{ background: "rgba(52,211,153,0.04)", border: "1px solid rgba(52,211,153,0.12)" }}
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-60" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-              </span>
-              <span className="text-[12px] font-black" style={{ color: "#34d399" }}>All Systems Operational</span>
-            </div>
           </div>
         </div>
 
@@ -208,39 +193,10 @@ export function Footer({ onOpenPrivacy, onOpenTerms, onOpenDataPolicy, onOpenSLA
             >
               Privacy Policy
             </button>
-            <button
-              onClick={onOpenTerms}
-              className="text-[11px] transition-colors hover:text-white/50 cursor-pointer"
-              style={{ color: "rgba(255,255,255,0.2)" }}
-            >
-              Terms of Service
-            </button>
-            <button
-              onClick={onOpenDataPolicy}
-              className="text-[11px] transition-colors hover:text-white/50 cursor-pointer"
-              style={{ color: "rgba(255,255,255,0.2)" }}
-            >
-              Data Policy
-            </button>
-            <button
-              onClick={onOpenSLA}
-              className="text-[11px] transition-colors hover:text-white/50 cursor-pointer"
-              style={{ color: "rgba(255,255,255,0.2)" }}
-            >
-              SLA
-            </button>
           </div>
         </div>
       </div>
 
-      {/* Compliance */}
-      <div style={{ borderTop: "1px solid rgba(255,255,255,0.03)", background: "rgba(0,0,0,0.5)" }}>
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5">
-          <p className="text-[11px] text-center leading-relaxed" style={{ color: "rgba(255,255,255,0.15)" }}>
-            © {new Date().getFullYear()} Media Tech Liberia. All Rights Reserved. Engineered in Paynesville City, Liberia. All custom applications are deployed on self-hosted, sovereign cloud nodes. Compliance maintained under Liberia Business Registry (LBR) frameworks.
-          </p>
-        </div>
-      </div>
     </footer>
   );
 }

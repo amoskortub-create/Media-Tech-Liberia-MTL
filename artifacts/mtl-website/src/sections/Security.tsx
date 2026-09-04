@@ -47,7 +47,7 @@ export function Security() {
             style={{ fontSize: "clamp(1.4rem,3vw,2.2rem)" }}>
             Sovereign Infrastructure,<br />
             <span style={{ background: "linear-gradient(135deg,#a78bfa,#7c3aed,#06b6d4)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
-              Bulletproof Security
+              Practical Security
             </span>
           </motion.h2>
           <motion.p initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
@@ -86,7 +86,7 @@ export function Security() {
 
         <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           className="flex flex-wrap justify-center gap-x-10 gap-y-3">
-          {["End-to-End Encrypted", "No Foreign Cloud", "Audit Logging", "Zero Vendor Lock-In", "Mobile Money Secured"].map((item) => (
+          {["Encryption Ready", "Access Controls", "Audit Logging", "Secure Integrations", "Mobile Money Support"].map((item) => (
             <div key={item} className="flex items-center gap-2 text-[12px] font-bold" style={{ color: "rgba(255,255,255,0.32)" }}>
               <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#a78bfa" }} />
               {item}

@@ -127,39 +127,6 @@ export function Hero() {
             </motion.button>
           </motion.div>
 
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-wrap gap-10 pt-10"
-            style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
-          >
-            {[
-              { value: "90/10", label: "Revenue Split" },
-              { value: "60%", label: "Bandwidth Saved" },
-              { value: "1080p", label: "Max Bitrate" },
-              { value: "100%", label: "Self-Hosted" },
-            ].map((s) => (
-              <div key={s.label}>
-                <div
-                  className="text-[2.2rem] font-black leading-none mb-1"
-                  style={{
-                    background: "linear-gradient(135deg, #ffffff, #a78bfa)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                  }}
-                >
-                  {s.value}
-                </div>
-                <div className="text-[10px] font-black tracking-[0.2em] uppercase"
-                  style={{ color: "rgba(255,255,255,0.3)" }}>
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </motion.div>
         </div>
       </div>
     </section>

@@ -7,27 +7,19 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 
 import { Navigation } from "./sections/Navigation";
 import { Hero } from "./sections/Hero";
-import { Metrics } from "./sections/Metrics";
 import { Capabilities } from "./sections/Capabilities";
 import { Services } from "./sections/Services";
-import { ViMore } from "./sections/ViMore";
 import { Security } from "./sections/Security";
 import { DeliveryWorkflow } from "./sections/DeliveryWorkflow";
 import { Leadership } from "./sections/Leadership";
 import { Footer } from "./sections/Footer";
-import { DataPolicy } from "./sections/DataPolicy";
-import { SLA } from "./sections/SLA";
 import { WhatsAppButton } from "./components/WhatsAppButton";
 import { PrivacyPolicy } from "./sections/PrivacyPolicy";
-import { TermsOfService } from "./sections/TermsOfService";
 
 const queryClient = new QueryClient();
 
 function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
-  const [showTerms, setShowTerms] = useState(false);
-  const [showDataPolicy, setShowDataPolicy] = useState(false);
-  const [showSLA, setShowSLA] = useState(false);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -37,19 +29,14 @@ function App() {
             <Navigation />
             <main>
               <Hero />
-              <Metrics />
               <Capabilities />
               <Services />
-              <ViMore />
               <Security />
               <DeliveryWorkflow />
               <Leadership />
             </main>
             <Footer
               onOpenPrivacy={() => setShowPrivacy(true)}
-              onOpenTerms={() => setShowTerms(true)}
-              onOpenDataPolicy={() => setShowDataPolicy(true)}
-              onOpenSLA={() => setShowSLA(true)}
             />
             <WhatsAppButton />
           </div>
@@ -58,21 +45,6 @@ function App() {
           <AnimatePresence>
             {showPrivacy && (
               <PrivacyPolicy key="privacy" onClose={() => setShowPrivacy(false)} />
-            )}
-          </AnimatePresence>
-          <AnimatePresence>
-            {showTerms && (
-              <TermsOfService key="terms" onClose={() => setShowTerms(false)} />
-            )}
-          </AnimatePresence>
-          <AnimatePresence>
-            {showDataPolicy && (
-              <DataPolicy key="data-policy" onClose={() => setShowDataPolicy(false)} />
-            )}
-          </AnimatePresence>
-          <AnimatePresence>
-            {showSLA && (
-              <SLA key="sla" onClose={() => setShowSLA(false)} />
             )}
           </AnimatePresence>
         </WouterRouter>

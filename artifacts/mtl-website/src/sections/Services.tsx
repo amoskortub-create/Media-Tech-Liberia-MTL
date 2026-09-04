@@ -43,7 +43,7 @@ const services = [
 
 const managed = [
   { icon: Globe, title: "Sovereign Cloud Hosting", body: "Your product runs on our optimized, low-latency infrastructure, completely bypassing expensive foreign cloud subscription traps." },
-  { icon: HardDrive, title: "Automated Backups & Redundancy", body: "Daily automated database snapshots ensuring your critical corporate data is 100% secure and instantly restorable." },
+  { icon: HardDrive, title: "Automated Backups & Redundancy", body: "Regular database snapshots help protect critical corporate data and support reliable recovery." },
   { icon: Wrench, title: "Continuous Maintenance & Patching", body: "Real-time server monitoring, backend optimization, security protocol updates, and monthly maintenance — hands-free." },
   { icon: BarChart3, title: "Scalability On-Demand", body: "As your user base grows from Monrovia across the counties, we dynamically scale backend nodes to handle heavy traffic." },
 ];
@@ -129,7 +129,7 @@ export function Services() {
           style={{ background: "rgba(124,58,237,0.07)", border: "1px solid rgba(124,58,237,0.18)" }}>
           <div>
             <h3 className="text-xl font-black text-white mb-1">Ready to build something sovereign?</h3>
-            <p className="text-[13px]" style={{ color: "rgba(255,255,255,0.4)" }}>No templates. No shortcuts. Just production-grade systems built for Africa.</p>
+            <p className="text-[13px]" style={{ color: "rgba(255,255,255,0.4)" }}>Thoughtful, production-ready systems built for Africa.</p>
           </div>
           <motion.button onClick={() => scrollTo("contact")} whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
             className="flex-shrink-0 inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-black text-[13px] text-white"

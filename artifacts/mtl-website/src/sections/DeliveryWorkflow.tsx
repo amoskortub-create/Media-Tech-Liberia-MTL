@@ -10,7 +10,7 @@ const steps = [
   },
   {
     num: "02", icon: FlaskConical, color: "#06b6d4",
-    title: "Sandbox Prototyping on Replit",
+    title: "Prototype and Client Review",
     body: "We compile high-fidelity interactive wireframes inside a collaborative sandbox environment for real-time client feedback and iteration.",
     tag: "Design & Prototype",
   },
@@ -23,7 +23,7 @@ const steps = [
   {
     num: "04", icon: Rocket, color: "#fbbf24",
     title: "Production Deployment on Global Edge",
-    body: "We launch your application onto a global CDN network, ensuring ultra-low latency, 100% uptime, and rapid loading speeds on mobile data connections.",
+    body: "We launch your application with an appropriate hosting and delivery setup, then monitor performance and improve it as usage grows.",
     tag: "Launch & Scale",
   },
 ];

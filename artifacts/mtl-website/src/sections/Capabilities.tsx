@@ -29,13 +29,13 @@ export function Capabilities() {
     {
       icon: Server,
       num: "03",
-      title: "Self-Hosted Appwrite Cluster",
-      sub: "Sovereign Cloud Infrastructure",
-      body: "Operated on our own secure, fully customized self-hosted Appwrite cluster — absolute data sovereignty with no third-party cloud pricing tiers.",
+      title: "Managed Application Infrastructure",
+      sub: "Reliable Deployment and Operations",
+      body: "Secure application infrastructure configured around your organization's operational, performance, and data requirements.",
       badges: [
-        { icon: CheckCircle2, text: "Online & Operational" },
-        { icon: Shield, text: "Absolute Data Sovereignty" },
-        { icon: Zap, text: "High-Speed Execution" },
+        { icon: CheckCircle2, text: "Reliable deployments" },
+        { icon: Shield, text: "Practical data protection" },
+        { icon: Zap, text: "Performance focused" },
       ],
       color: "#06b6d4",
     },
@@ -160,7 +160,7 @@ export function Capabilities() {
               <Code2 size={13} style={{ color: "#a78bfa" }} />
               <span className="text-[11px] font-black tracking-widest uppercase" style={{ color: "#a78bfa" }}>Our Standard</span>
             </div>
-            <h3 className="text-2xl md:text-3xl font-black text-white mb-2">Sovereign Code. No Templates.</h3>
+            <h3 className="text-2xl md:text-3xl font-black text-white mb-2">Software shaped around your work.</h3>
             <p className="text-[14px] leading-relaxed max-w-xl" style={{ color: "rgba(255,255,255,0.45)" }}>
               Media Tech Liberia builds production-grade, secure, data-optimized software systems tailored precisely to how your enterprise actually operates.
             </p>
