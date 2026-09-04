@@ -6,7 +6,6 @@ import mtlLogo from "@assets/1775314197014_transcpr_1779748663765.jpg";
 const links = [
   { name: "Capabilities", href: "capabilities" },
   { name: "Services", href: "services" },
-  { name: "Scholar Net", href: "scholarNet" },
   { name: "Security", href: "security" },
   { name: "Process", href: "workflow" },
   { name: "Team", href: "about" },

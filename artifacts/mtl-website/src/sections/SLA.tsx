@@ -89,14 +89,13 @@ export function SLA({ onClose }: Props) {
           <div className="space-y-8 text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
 
             <Section title="1. Purpose">
-              <p>This Service Level Agreement ("SLA") sets out the performance standards, availability commitments, and support obligations that Media Tech Liberia ("MTL") provides to users of its platforms — including ViMore and Scholar Net — and to enterprise or institutional partners.</p>
+              <p>This Service Level Agreement ("SLA") sets out the performance standards, availability commitments, and support obligations that Media Tech Liberia ("MTL") provides to users of its platforms and to enterprise or institutional partners.</p>
             </Section>
 
             <Section title="2. Service Availability">
               <p>MTL targets the following uptime commitments for production services:</p>
               <div className="space-y-2 mt-3">
                 <MetricRow label="ViMore Platform" value="99.5% uptime / month" color="#a78bfa" />
-                <MetricRow label="Scholar Net" value="99.0% uptime / month" color="#06b6d4" />
                 <MetricRow label="API Services" value="99.5% uptime / month" color="#34d399" />
                 <MetricRow label="Scheduled Maintenance Window" value="Sundays 2:00–4:00 AM WAT" color="#f59e0b" />
               </div>

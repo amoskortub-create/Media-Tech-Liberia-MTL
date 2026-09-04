@@ -79,7 +79,7 @@ export function DataPolicy({ onClose }: Props) {
           <div className="space-y-8 text-[13px] leading-relaxed" style={{ color: "rgba(255,255,255,0.6)" }}>
 
             <Section title="1. Overview">
-              <p>Media Tech Liberia ("MTL") is committed to responsible data stewardship. This Data Policy describes how data is collected, stored, processed, and protected across all MTL platforms including ViMore and Scholar Net.</p>
+              <p>Media Tech Liberia ("MTL") is committed to responsible data stewardship. This Data Policy describes how data is collected, stored, processed, and protected across MTL platforms.</p>
             </Section>
 
             <Section title="2. Data We Collect">
@@ -89,7 +89,6 @@ export function DataPolicy({ onClose }: Props) {
                 <li>User-generated content (posts, uploads, messages)</li>
                 <li>Device and usage information (device type, operating system, app version)</li>
                 <li>Connection data (IP address, session duration, feature interactions)</li>
-                <li>Academic records and progress data on Scholar Net (with user consent)</li>
               </ul>
             </Section>
 

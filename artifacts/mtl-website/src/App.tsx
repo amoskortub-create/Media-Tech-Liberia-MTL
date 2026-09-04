@@ -11,7 +11,6 @@ import { Metrics } from "./sections/Metrics";
 import { Capabilities } from "./sections/Capabilities";
 import { Services } from "./sections/Services";
 import { ViMore } from "./sections/ViMore";
-import { ScholarNet } from "./sections/ScholarNet";
 import { Security } from "./sections/Security";
 import { DeliveryWorkflow } from "./sections/DeliveryWorkflow";
 import { Leadership } from "./sections/Leadership";
@@ -42,7 +41,6 @@ function App() {
               <Capabilities />
               <Services />
               <ViMore />
-              <ScholarNet />
               <Security />
               <DeliveryWorkflow />
               <Leadership />
