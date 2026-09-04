@@ -1,49 +1,5 @@
 import { motion } from "framer-motion";
 import amosPhoto from "@assets/Face_Clean-up_Studio_In_a_studio_portrait_style_a_man_with_dar_1779748900032.jpg";
-import pastorPhoto from "@assets/1780535304812_1783041621431.jpg";
-import fredPhoto from "@assets/1782961077924_1782961146710.jpg";
-import ujayPhoto from "@assets/1782961027228_1782961146999.jpg";
-import ebenezerPhoto from "@assets/IMG-20260503-WA0006_1782961192424.jpg";
-import aaronPhoto from "@assets/1780710477236_1782961209934.jpg";
-
-// Team ordered highest position first (after Amos featured)
-const team = [
-  {
-    name: "Aaron M. Tulay",
-    role: "President",
-    photo: aaronPhoto,
-    color: "#06b6d4",
-    bio: "Leads organizational governance and institutional relationships, ensuring Media Tech Liberia's vision translates into lasting impact for Liberia.",
-  },
-  {
-    name: "Pastor Semeiator T Cheason",
-    role: "Vice President",
-    photo: pastorPhoto,
-    color: "#f59e0b",
-    bio: "Drives strategic growth and community engagement, championing Media Tech Liberia's mission across Liberian communities and partnerships.",
-  },
-  {
-    name: "Ebenezer Johnson",
-    role: "Director of Media Tech Liberia",
-    photo: ebenezerPhoto,
-    color: "#fbbf24",
-    bio: "Oversees operations and strategic partnerships, driving the organization's mission to empower Liberian talent across the digital ecosystem.",
-  },
-  {
-    name: "Fred J. Johnson",
-    role: "Editors & Media Director",
-    photo: fredPhoto,
-    color: "#34d399",
-    bio: "Leads all editorial operations and media strategy, shaping the narrative of West Africa's digital future through compelling content and creative direction.",
-  },
-  {
-    name: "Ujay George",
-    role: "Programmer",
-    photo: ujayPhoto,
-    color: "#a78bfa",
-    bio: "Core engineer behind Media Tech Liberia's data-lite architectures — bringing technical precision and innovative solutions to every system built.",
-  },
-];
 
 const values = [
   { label: "Africa-First", desc: "Built for African voices and communities." },
@@ -51,29 +7,6 @@ const values = [
   { label: "Innovation", desc: "Always pushing the boundaries of what's possible." },
   { label: "Empathy", desc: "Led by genuine care for our community." },
 ];
-
-function InitialsAvatar({ name, color }: { name: string; color: string }) {
-  const initials = name
-    .split(" ")
-    .filter((_, i) => i === 0 || i === name.split(" ").length - 1)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase()
-    .slice(0, 2);
-  return (
-    <div
-      className="w-full h-52 flex items-center justify-center flex-shrink-0"
-      style={{ background: `${color}10` }}
-    >
-      <span
-        className="font-black select-none"
-        style={{ fontSize: "3.5rem", color, opacity: 0.7, letterSpacing: "-0.03em" }}
-      >
-        {initials}
-      </span>
-    </div>
-  );
-}
 
 export function Leadership() {
   return (
@@ -193,61 +126,6 @@ export function Leadership() {
             </div>
           </div>
         </motion.div>
-
-        {/* ── Rest of team — horizontal scroll row ── */}
-        <div
-          className="flex gap-4 mb-20 pb-3 -mx-5 px-5 sm:-mx-8 sm:px-8"
-          style={{ overflowX: "auto", scrollbarWidth: "none" }}
-        >
-          {team.map((m, i) => (
-            <motion.div
-              key={m.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.07 }}
-              whileHover={{ y: -4 }}
-              className="rounded-xl overflow-hidden flex flex-col flex-shrink-0 transition-all duration-300"
-              style={{ width: 180, background: "#0d0d0d", border: `1px solid ${m.color}22` }}
-            >
-              {/* Top accent */}
-              <div className="h-[1px]" style={{ background: `linear-gradient(90deg, ${m.color}90, transparent)` }} />
-
-              {/* Photo or initials */}
-              {m.photo ? (
-                <div className="w-full overflow-hidden flex-shrink-0" style={{ height: 160 }}>
-                  <img
-                    src={m.photo}
-                    alt={`${m.name} — ${m.role}`}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
-                    data-testid={`img-team-${m.name.split(" ")[0].toLowerCase()}`}
-                  />
-                </div>
-              ) : (
-                <div
-                  className="w-full flex items-center justify-center flex-shrink-0"
-                  style={{ height: 160, background: `${m.color}10` }}
-                >
-                  <span
-                    className="font-black select-none"
-                    style={{ fontSize: "2.2rem", color: m.color, opacity: 0.7 }}
-                  >
-                    {m.name.split(" ").filter((_, idx) => idx === 0 || idx === m.name.split(" ").length - 1).map(w => w[0]).join("").toUpperCase().slice(0, 2)}
-                  </span>
-                </div>
-              )}
-
-              {/* Info */}
-              <div className="p-3 flex flex-col gap-1.5 flex-1">
-                <div className="w-4 h-[2px] rounded-full" style={{ background: m.color }} />
-                <h3 className="text-[13px] font-black text-white leading-snug">{m.name}</h3>
-                <p className="text-[10px] font-black uppercase tracking-wider" style={{ color: m.color }}>
-                  {m.role}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* ── Core values ── */}
         <div>

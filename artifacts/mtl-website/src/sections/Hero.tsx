@@ -97,7 +97,7 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-4 mb-20"
           >
             <motion.button
-              onClick={() => scrollTo("viMore")}
+              onClick={() => scrollTo("services")}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-black text-[14px] text-white tracking-wide transition-all"
@@ -107,7 +107,7 @@ export function Hero() {
               }}
               data-testid="button-explore"
             >
-              Explore Our Products
+              Explore Our Services
               <ArrowRight size={16} />
             </motion.button>
             <motion.button
@@ -122,7 +122,7 @@ export function Hero() {
               }}
               data-testid="button-manifesto"
             >
-              Meet the Team
+              Meet Our Founder
               <ChevronRight size={16} />
             </motion.button>
           </motion.div>

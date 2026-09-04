@@ -15,7 +15,6 @@ import { ScholarNet } from "./sections/ScholarNet";
 import { Security } from "./sections/Security";
 import { DeliveryWorkflow } from "./sections/DeliveryWorkflow";
 import { Leadership } from "./sections/Leadership";
-import { Videos } from "./sections/Videos";
 import { Footer } from "./sections/Footer";
 import { DataPolicy } from "./sections/DataPolicy";
 import { SLA } from "./sections/SLA";
@@ -47,7 +46,6 @@ function App() {
               <Security />
               <DeliveryWorkflow />
               <Leadership />
-              <Videos />
             </main>
             <Footer
               onOpenPrivacy={() => setShowPrivacy(true)}

@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
-import { Play, DollarSign, MessageCircle, ExternalLink, Download, Smartphone } from "lucide-react";
+import { Play, DollarSign, MessageCircle, ExternalLink } from "lucide-react";
 import screenshot1 from "@assets/Screenshot_20260524-173421_1779748627809.jpg";
 import screenshot2 from "@assets/Screenshot_20260523-045223_1779748627968.jpg";
 import screenshot3 from "@assets/Screenshot_20260523-045245_1779748628179.jpg";
 
 const VIMORE_URL = "https://www.vimore.cfd";
-const APK_URL = `${import.meta.env.BASE_URL}vimore.apk`;
 
 export function ViMore() {
   return (
@@ -84,8 +83,7 @@ export function ViMore() {
               ))}
             </div>
 
-            {/* Download buttons */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex">
               <motion.a href={VIMORE_URL} target="_blank" rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
                 className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-black text-[13px] text-white"
@@ -93,20 +91,6 @@ export function ViMore() {
                 data-testid="link-open-vimore">
                 <ExternalLink size={14} /> Open Web App
               </motion.a>
-              <motion.a href={APK_URL} download="ViMore.apk"
-                whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-                className="flex-1 flex items-center justify-center gap-2 py-4 rounded-xl font-black text-[13px]"
-                style={{ background: "rgba(52,211,153,0.1)", border: "1px solid rgba(52,211,153,0.28)", color: "#34d399", boxShadow: "0 0 16px rgba(52,211,153,0.12)" }}
-                data-testid="link-download-apk">
-                <Download size={14} /> Download APK
-              </motion.a>
-            </div>
-            <div className="flex items-start gap-2.5 px-4 py-3 rounded-xl"
-              style={{ background: "rgba(52,211,153,0.04)", border: "1px solid rgba(52,211,153,0.1)" }}>
-              <Smartphone size={13} className="mt-0.5 flex-shrink-0" style={{ color: "#34d399" }} />
-              <p className="text-[12px] leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
-                Android APK — Enable "Install from unknown sources" in your settings to install.
-              </p>
             </div>
           </motion.div>
 
