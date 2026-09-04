@@ -43,6 +43,7 @@ const contactItems = [
 const navLinks = [
   { label: "Capabilities", href: "capabilities" },
   { label: "Services", href: "services" },
+  { label: "ViMore", href: "viMore" },
   { label: "Security", href: "security" },
   { label: "Process", href: "workflow" },
   { label: "Team", href: "about" },
