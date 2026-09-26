@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Cloud, Image, Video, Code2, Languages, Server } from "lucide-react";
+import { Cloud, Code2, Server } from "lucide-react";
 
 const products = [
   {
@@ -12,17 +12,6 @@ const products = [
       { icon: Code2, text: "Tools to build and host applications" },
     ],
     color: "#06b6d4",
-  },
-  {
-    icon: Image,
-    name: "Mesurado AI",
-    label: "In Development",
-    description: "An AI API provider offering access to multiple models for modern applications.",
-    features: [
-      { icon: Video, text: "Video and image generation models" },
-      { icon: Languages, text: "Flexible AI capabilities through one API" },
-    ],
-    color: "#f59e0b",
   },
 ];
 
