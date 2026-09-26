@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import { Bot, Code2, ExternalLink, KeyRound, MessageCircle, BarChart3 } from "lucide-react";
+import { Bot, ExternalLink, KeyRound, MessageCircle, BarChart3 } from "lucide-react";
 
 const products = [
   {
-    icon: Bot,
     title: "Mesurado AI Assistant",
     description: "Our native, high-performance conversational AI and platform guide. Always online and ready to assist.",
     href: "https://mesurado.mediatechliberia.online",
     cta: "Chat Now",
     image: "/images/mesurado-chat-screenshot.jpg",
     imageAlt: "Mesurado AI Chat Interface",
+    logo: "/images/mesurado-ai-logo.jpg",
     color: "#06b6d4",
     features: [
       { icon: MessageCircle, text: "Conversational assistance, always available" },
@@ -17,13 +17,13 @@ const products = [
     ],
   },
   {
-    icon: Code2,
     title: "Mesurado API & Developer Dashboard",
     description: "The complete API gateway for developers. Manage API keys, track token usage, and integrate Mesurado models directly into your own applications.",
     href: "https://aidash.mediatechliberia.online",
     cta: "Developer Portal",
     image: "/images/mesurado-dev-screenshot.jpg",
     imageAlt: "Mesurado Developer Dashboard",
+    logo: "/images/mesurado-ai-logo.jpg",
     color: "#a78bfa",
     features: [
       { icon: KeyRound, text: "API key and access management" },
@@ -104,7 +104,11 @@ export function AIInfrastructure() {
                     className="w-12 h-12 rounded-xl flex items-center justify-center"
                     style={{ background: `${product.color}14`, border: `1px solid ${product.color}28` }}
                   >
-                    <product.icon size={22} style={{ color: product.color }} />
+                    <img
+                      src={product.logo}
+                      alt="Mesurado AI logo"
+                      className="w-full h-full rounded-xl object-cover"
+                    />
                   </div>
                   <span
                     className="px-3 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase"
